@@ -42,10 +42,11 @@ h3 {
 
 #landing-page {
     display: grid;
-    grid-template-columns: 300px 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 30% 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    height: 95vh;
     margin-right: 0;
-    margin-bottom: 20vh;
+    margin-bottom: 10vh;
     margin-left: 5%;
 }
 nav {
@@ -55,12 +56,12 @@ nav {
     padding: 30px;
     text-align: center;
     grid-column: 2 / 3;
-    grid-row: 1 / 3;
+    grid-row: 1 / 4;
     line-height: 1em;
 }
 #nav-prompt {
     text-transform: uppercase;
-    padding: 20px;
+    padding: 30px;
     line-height: 1.5em;
     text-decoration: none;
     color: black;
@@ -75,11 +76,12 @@ nav {
 }
 #robot {
     grid-column: 1 / 2;
-    grid-row: 2 / 4;
+    grid-row: 2 / 5;
 }
 #robot img{
-    width: 100%;
+    width: 90%;
 }
+
 
 
 
