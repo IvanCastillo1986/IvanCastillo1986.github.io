@@ -13,7 +13,6 @@ html{
     background-color: #02EFEE;
 }
 main {
-    margin-left: 10%;
     margin-right: 10%;
     line-height: 2em;
 }
@@ -41,13 +40,13 @@ h3 {
     color: black;
 }
 
-
 #landing-page {
     display: grid;
     grid-template-columns: 300px 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     margin-right: 0;
-    margin-bottom: 0;
+    margin-bottom: 20vh;
+    margin-left: 5%;
 }
 nav {
     background-color: white;
@@ -74,8 +73,17 @@ nav {
     margin: 5%;
     color: black;
 }
-
 #robot {
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+}
+#robot img{
+    width: 100%;
+}
+
+
+
+/* #robot {
     display: grid;
     border-radius: 50%;
     background-color: #EDC99F;
@@ -108,18 +116,19 @@ nav {
     height: 20px;
     border-radius: 50%;
     margin: auto;
-}
+} */
+
+
 
 section {
     margin-bottom: 10vh;
 }
 
-
-
 #about-me {
-    display: grid;
+    display: none;
     grid-template-columns: 40% 60%;
     grid-template-rows: 1fr;
+    margin-left: 10%;
 }
 #inner-paragraph {
     grid-column: 1 / 2;
@@ -127,15 +136,34 @@ section {
 aside {
     grid-column: 2 / 3;
 }
-img {
+#about-me img {
+    width: 60%;
+    border: 3px solid #0400f8;
+    border-radius: 10px;
+    box-shadow: 5px 10px 20px;
+    margin-left: 30px;
+}
+
+
+#projects {
+    display: none;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+#projects p {
+    margin-top: 30px;
+}
+#projects img {
     width: 60%;
     border: 3px solid #0400f8;
     border-radius: 10px;
     box-shadow: 5px 10px 20px;
 }
 
-#projects p {
-    margin-top: 30px;
+
+#skills {
+    margin-left: 10%;
+    display: none;
 }
 
 
@@ -190,4 +218,7 @@ a {
 
 #projects {
     text-align: right;
+}
+#snowman {
+    text-align: left;
 }

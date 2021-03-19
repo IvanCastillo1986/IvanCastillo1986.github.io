@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome  |  Ivan's Personal Portfolio</title>
     <link rel="stylesheet" href="ivan-site.css">
-    <script src="ivan-site.js"></script>
+    <script src="ivan-site.js" defer></script>
 </head>
 <body>
     <div id="header-wrapper">
@@ -15,30 +15,35 @@
             <h2 class="text">FULL STACK WEB DEVELOPER</h2>
         </header>
     </div>
-<main>
+
 <section id="landing-page" class="text"></div>
     <nav>
-        <h3 id='nav-prompt'>Welcome human.<br>
+        <h3 id='nav-prompt'>Welcome traveler.<br>
             I am 'The Gatekeeper'.<br>
-            A sentient Android built by Ivan using CSS.<br> 
+            A sentient lifeform built by Ivan.<br><br>
             How would you like to proceed human?</h3>
         <ul id='nav-list'>
-            <li class="nav-item text"><a href="#about-me">ABOUT IVAN</a></li>
-            <li class="nav-item text"><a href="#projects">PROJECTS</a></li>
-            <li class="nav-item text"><a href="#skills">SKILLS</a></li>
-            <li class="nav-item text"><a href="#contact">CONTACT</a></li>
+            <li class="nav-item text"><a id="nav-about">ABOUT IVAN</a></li>
+            <li class="nav-item text"><a id="nav-projects">PROJECTS</a></li>
+            <li class="nav-item text"><a id="nav-skills">SKILLS</a></li>
         </ul>
     </nav>
     
-    <div id="robot">
+    <!-- <div id="robot">
         <div id="first-eye" class="eye">
             <div class="pupil"></div>
         </div>
         <div id="second-eye" class="eye">
             <div class="pupil"></div>
         </div>
+    </div> -->
+
+    <div id="robot">
+        <img src="images/my-robot.svg" alt="A state of the art SVG (soon to be CSS) android">
     </div>
 </section>
+
+<main>
 
 <section id="about-me" class="text">
     <section id="inner-paragraph">
@@ -59,8 +64,10 @@
     <p>These projects are going to be so bomb!</p>
     <p>Lovesick<br>Choose Your Own Adventure Game</p>
     <img src="images/lovesick-crop.png" alt="A screenshot of my Choose Your Own Adventure Project - Lovesick" />
-    <p>Snowman<br>Letter-guessing Game</p>
-    <img src="images/snowman-crop.png" alt="A screenshot of my Snowman word-guessing game" />
+    <div id="snowman">
+        <p>Snowman<br>Letter-guessing Game</p>
+        <img src="images/snowman-crop.png" alt="A screenshot of my Snowman word-guessing game" />
+    </div>
     <p>Total 180 Training<br>My Wordpress Business Website</p>
     <img src="images/my-website.png" />
 </section>
