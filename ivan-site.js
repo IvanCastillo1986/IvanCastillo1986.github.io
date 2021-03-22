@@ -19,7 +19,7 @@ const myDefault = () => {
 
 aboutMeLink.addEventListener("click", () => {
     myDefault()
-    aboutMeSection.style.display = "grid";
+    aboutMeSection.style.display = "block";
     navPrompt.textContent = ''
     navPrompt.textContent = 'We have arrived homonid. Enjoy your stay.'
     setTimeout(function() {
@@ -50,3 +50,13 @@ skillsLink.addEventListener("click", () => {
     }, 5000)
 })
 
+contactLink.addEventListener("click", () => {
+    myDefault()
+    contactsSection.style.display = "grid"
+    navPrompt.textContent = ''
+    navPrompt.textContent = 'We have arrived homonid. Enjoy your stay.'
+    setTimeout(function() {
+        navPrompt.style.paddingLeft = '30px';
+        navPrompt.innerHTML = 'You\'re still here homosapien?<br>Do you have a new location in mind?'
+    }, 5000)
+})
