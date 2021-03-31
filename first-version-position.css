@@ -102,7 +102,7 @@ main {
 }
 
 
-section {
+main section {
     margin-bottom: 10vh;
 }
 
@@ -142,9 +142,6 @@ section {
 #skills {
     margin-left: 10%;
     display: none;
-}
-#skills h4 {
-    color: brown;
 }
 
 
@@ -274,6 +271,9 @@ footer h3 {
 
 
 
+.brown {
+    color: brown;
+}
 .white {
     color: white;
 }
@@ -281,7 +281,6 @@ footer h3 {
 p {
     margin-bottom: 20px;
 }
-
 
 a {
     text-decoration: none;

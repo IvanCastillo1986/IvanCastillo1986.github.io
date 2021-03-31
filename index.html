@@ -5,39 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome  |  Ivan's Personal Portfolio</title>
-    <link rel="stylesheet" href="new.css">
+    <link rel="stylesheet" href="second-version-flex.css">
     <script src="ivan-site.js" defer></script>
 </head>
 <body>
 
     <div id="header-wrapper">
         <header>
-            <h1>IVAN CASTILLO</h1>
+            <h1><a id="go-home">IVAN CASTILLO</a></h1>  <!-- !!Add a link to go back to home page where robot introduces himself -->
             <h2 class="text">FULL STACK WEB DEVELOPER</h2>
         </header>
     </div>
 
     <section id="home" class="text"></div>
-        <nav>
-            <h3 id='nav-prompt'>Welcome traveler.<br>
-                I am 'The Gatekeeper'.<br>
-                A sentient lifeform built by Ivan.<br><br>
-                How would you like to proceed human?</h3>
-            <ul id='nav-list'>
-                <li class="nav-item"><a id="nav-about">ABOUT IVAN</a></li>
-                <li class="nav-item"><a id="nav-projects">PROJECTS</a></li>
-                <li class="nav-item"><a id="nav-skills">SKILLS</a></li>
-            </ul>
-        </nav>
-
-        <div id="robot">
-                <img src="images/my-robot.svg" alt="A state of the art SVG (soon to be CSS) android">
+        <div id="nav-container">
+            <nav>           
+                <h3 id='nav-prompt'>Welcome traveler.<br>
+                    I am 'The Gatekeeper'.<br>
+                    A sentient lifeform built by Ivan.<br><br>
+                    How would you like to proceed human?</h3>
+                <ul id='nav-list'>
+                    <li class="nav-item"><a id="nav-about">ABOUT IVAN</a></li>
+                    <li class="nav-item"><a id="nav-projects">PROJECTS</a></li>
+                    <li class="nav-item"><a id="nav-skills">SKILLS</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="outer-robot">
+            <div id="robot-container">
+                    <img src="images/my-robot.svg" alt="A state of the art SVG (soon to be CSS) android">
+            </div>
         </div>
     </section>
 
 
     <main>
-        <section id="about-me" class="text">    <!-- start of 'about-me' -->
+        <section id="about-me" class="text hidden">    <!-- start of 'about-me' -->
                 <h3>About Me</h3><img id="my-pic" src="images/Pursuit 7.0 - Ivan Castillo.jpg" alt="A picture of me looking terrible" />
                 <p>
                 A Full Stack Web Developer looking to utilize the most powerful source of information towards transforming 
@@ -52,31 +55,33 @@
                 and connecting individuals. </p>
         </section>  <!-- end of 'about me' -->
 
-        <section id="projects" class="text">    <!-- start of 'projects' -->
+        <section id="projects" class="text hidden">    <!-- start of 'projects' -->
             <h3>Projects</h3>
             <p>Click on image to view project repository!</p>
-            <p>Lovesick<br>Choose Your Own Adventure Game</p>
-            <a href="https://github.com/IvanCastillo1986/FSW-Text-Based-Adventure"><img src="images/lovesick-crop.png" alt="A screenshot of my Choose Your Own Adventure Project - Lovesick" /></a>
+            <p class="brown">Lovesick</p>
+            <p>Your Own Adventure Game</p>
+            <a href="https://github.com/IvanCastillo1986/FSW-Text-Based-Adventure" target='_blank'><img src="images/lovesick-crop.png" alt="A screenshot of my Choose Your Own Adventure Project - Lovesick" /></a>
             <div id="snowman">
-                <p>Snowman<br>Letter-guessing Game</p>
-                <a href="https://github.com/IvanCastillo1986/FSW-CLI-Snowman"><img src="images/snowman-crop.png" alt="A screenshot of my Snowman word-guessing game" /></a>
+                <p class="brown">Snowman</p>
+                <p>Letter-guessing Game</p>
+                <a href="https://github.com/IvanCastillo1986/FSW-CLI-Snowman" target='_blank'><img src="images/snowman-crop.png" alt="A screenshot of my Snowman word-guessing game" /></a>
             </div>
-            <p>Total 180 Training<br>My Wordpress Business Website</p>
-            <img src="images/my-website.png" />
+            <p class="brown">Total 180 Training</p><p>My Wordpress Business Website</p>
+            <a href="http://www.total180training.com/" target='_blank'><img src="images/my-website.png" /></a>
         </section>  <!-- end of 'projects' -->
 
-        <section id="skills" class="text">  <!-- start of 'skills' -->
+        <section id="skills" class="text hidden">  <!-- start of 'skills' -->
             <h3>Skills</h3>
-            <h4>Front End</h4>
+            <h4 class="brown">Front End</h4>
                 <p>Javascript, React, HTML, CSS, Redux, Wordpress</p>
-            <h4>Back End</h4>
+            <h4 class="brown">Back End</h4>
                 <p>SQL, Node.js, Express, API Creation/ Implementation, Heroku, Firebase</p>
         </section>  <!-- end of 'skills' -->
     </main>
 
 
     <footer id="contact">
-        <h3 class="text white">Contact</h3>
+        <h2 class="text white">Contact</h2>
             <div id="footer1"><a class="white" href="https://www.linkedin.com/in/ivancastillopursuit/">LinkedIn</a></div>
             <div id="footer2"><a class="white" href="https://github.com/IvanCastillo1986">GitHub</a></div>
             <div id="footer3"><a class="white" href="mailto: ivancastillo@pursuit.org">E-mail</a></div>

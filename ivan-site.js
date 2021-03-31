@@ -1,3 +1,8 @@
+console.log('ivan-site.js works!')
+
+let main = document.querySelector('main')
+
+let goHome = document.getElementById('go-home')
 
 let aboutMeSection = document.getElementById("about-me")
 let projectsSection = document.getElementById("projects")
@@ -13,50 +18,51 @@ const myDefault = () => {
     aboutMeSection.style.display = 'none'
     projectsSection.style.display = 'none'
     skillsSection.style.display = 'none'
+    // main.style.display = 'none'
 }
 
+const saySomethingElse = () => {
+    navPrompt.textContent = ''
+    navPrompt.textContent = 'We have arrived homonid. Enjoy your stay. Scroll down.'
+    setTimeout(function() {
+        navPrompt.style.paddingLeft = '30px';
+        navPrompt.innerHTML = 'You\'re still here homosapien?<br>Do you have a new location in mind?'
+    }, 5000)
+}
+
+// Try to make a function that removes the recurrence of the same code in the addEventListener
+
+
+// function clickMe(link) {
+//     link.addEventListener("click", () => {
+//         myDefault()
+//         link.style.display = "block";
+//         saySomethingElse()
+//     })
+// }
+// clickMe(aboutMeLink)
 
 
 aboutMeLink.addEventListener("click", () => {
     myDefault()
     aboutMeSection.style.display = "block";
-    navPrompt.textContent = ''
-    navPrompt.textContent = 'We have arrived homonid. Enjoy your stay.'
-    setTimeout(function() {
-        navPrompt.style.paddingLeft = '30px';
-        navPrompt.innerHTML = 'You\'re still here homosapien?<br>Do you have a new location in mind?'
-    }, 5000)
+    saySomethingElse()
 })
 
 projectsLink.addEventListener("click", () => {
     myDefault()
     projectsSection.style.display = "block"
-    navPrompt.textContent = ''
-    navPrompt.textContent = 'We have arrived homonid. Enjoy your stay.'
-    setTimeout(function() {
-        navPrompt.style.paddingLeft = '30px';
-        navPrompt.innerHTML = 'You\'re still here homosapien?<br>Do you have a new location in mind?'
-    }, 5000)
+    saySomethingElse()
 })
 
 skillsLink.addEventListener("click", () => {
     myDefault()
-    skillsSection.style.display = "grid"
-    navPrompt.textContent = ''
-    navPrompt.textContent = 'We have arrived homonid. Enjoy your stay.'
-    setTimeout(function() {
-        navPrompt.style.paddingLeft = '30px';
-        navPrompt.innerHTML = 'You\'re still here homosapien?<br>Do you have a new location in mind?'
-    }, 5000)
+    skillsSection.style.display = "block"
+    saySomethingElse()
 })
 
 contactLink.addEventListener("click", () => {
     myDefault()
-    contactsSection.style.display = "grid"
-    navPrompt.textContent = ''
-    navPrompt.textContent = 'We have arrived homonid. Enjoy your stay.'
-    setTimeout(function() {
-        navPrompt.style.paddingLeft = '30px';
-        navPrompt.innerHTML = 'You\'re still here homosapien?<br>Do you have a new location in mind?'
-    }, 5000)
+    contactsSection.style.display = "block"
+    saySomethingElse()
 })
