@@ -30,6 +30,9 @@ const saySomethingElse = () => {
     }, 5000)
 }
 
+
+
+
 // Try to make a function that removes the recurrence of the same code in the addEventListener
 
 
@@ -61,8 +64,15 @@ skillsLink.addEventListener("click", () => {
     saySomethingElse()
 })
 
-contactLink.addEventListener("click", () => {
+
+goHome.addEventListener('click', () => {
+    navPrompt.innerHTML = 'Welcome traveler.<br>I am \'The Gatekeeper\'.<br>A sentient lifeform built by Ivan.<br><br>How would you like to proceed human?'
     myDefault()
-    contactsSection.style.display = "block"
-    saySomethingElse()
+
 })
+goHome.addEventListener('mouseover', () => {
+    goHome.style.color = '#02EFEE';
+    setTimeout(() => {
+        goHome.style.color = 'blue';
+    }, 500);
+}, false)
