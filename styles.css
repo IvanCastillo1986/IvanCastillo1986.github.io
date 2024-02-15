@@ -38,14 +38,15 @@ a:hover {
     cursor: url('images/buster-with-bar.svg') 22 13, auto;
 }
 a:active {
-    cursor: url('images/buster-shooting.svg') 30 13, auto;
+    cursor: url('images/buster-shooting.svg') 38 13, auto;
 }
 
 
 
 
 
-/* contains header */
+
+/********** HEADER */
 #header-wrapper {
 }
 header {
@@ -66,7 +67,7 @@ header h2 {
 
 
 
-/* contains home page */
+/**********  HOME PAGE */
 #home {
     display: flex;
     flex-direction: row-reverse;
@@ -125,13 +126,22 @@ nav li {
     width: 72%;
 }
 
-/* START OF MAIN */
+
+/**********  START OF MAIN */
 
 main {
-    display: block;
-    margin-right: 10%;
+    display: flex;
+    flex-direction: column;
     line-height: 2em;
-    margin-top: 180px;
+    margin: 80px 8%;
+}
+main h3 {
+    color: #0400f8;
+    text-align: center;
+    margin-bottom: 60px;
+}
+main h4 {
+    color: #0400f8;
 }
 
 
@@ -139,7 +149,6 @@ main {
     display: none;
     grid-template-columns: 40% 60%;
     grid-template-rows: 1fr;
-    margin-left: 10%;
 }
 #my-pic {
     float: right;
@@ -172,8 +181,29 @@ main {
     display: none;
 }
 
+#cyber {
+    text-align: center;
+    margin: auto;
+}
+#cyber h3 {
+    margin-bottom: 80px;
+}
+#cyber-img {
+    width: 100%;
+    margin-bottom: 80px;
+}
 
-/* END OF MAIN */
+#my-pic {
+    float: right;
+    width: 30%;
+    border: 3px solid #0400f8;
+    border-radius: 10px;
+    box-shadow: 5px 10px 20px;
+    margin: 0 0 10px 10px;
+}
+
+
+/**********  END OF MAIN */
 
 footer {
     display: grid;

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome  |  Ivan's Personal Portfolio</title>
-    <link rel="stylesheet" href="third-version.css">
+    <link rel="stylesheet" href="styles.css">
     <script src="ivan-site.js" defer></script>
 </head>
 <body>
@@ -13,7 +13,7 @@
     <div id="header-wrapper">
         <header>
             <h1><a id="go-home">IVAN CASTILLO</a></h1>  <!-- !!Add a link to go back to home page where robot introduces himself -->
-            <h2 class="text">FULL STACK WEB DEVELOPER</h2>
+            <h2 class="text">FULL STACK WEB DEVELOPER </h2>
         </header>
     </div>
 
@@ -22,18 +22,19 @@
             <nav>           
                 <h3 id='nav-prompt'>Welcome traveler.<br>
                     I am 'The Gatekeeper'.<br>
-                    A sentient lifeform built by Ivan.<br><br>
+                    A sentient android built by Ivan.<br><br>
                     How would you like to proceed human?</h3>
                 <ul id='nav-list'>
-                    <li class="nav-item buster"><a id="nav-about">ABOUT IVAN</a></li>
+                    <li class="nav-item buster"><a id="nav-about">ABOUT ME</a></li>
                     <li class="nav-item"><a id="nav-projects">PROJECTS</a></li>
                     <li class="nav-item"><a id="nav-skills">SKILLS</a></li>
+                    <li class="nav-item"><a id="nav-cyber">CYBER</a></li>
                 </ul>
             </nav>
         </div>
         <div id="outer-robot">
             <div id="robot-container">
-                    <img src="images/my-robot.svg" alt="A state of the art SVG (soon to be CSS) android">
+                    <img src="images/gatekeeper.svg" alt="A state of the art SVG (soon to be CSS) android">
             </div>
         </div>
     </section>
@@ -41,9 +42,9 @@
 
     <main>
         <section id="about-me" class="text hidden">    <!-- start of 'about-me' -->
-                <h3>About Me</h3><img id="my-pic" src="images/Pursuit 7.0 - Ivan Castillo.jpg" alt="A picture of me looking terrible" />
-                <p>
-                A Full Stack Web Developer looking to utilize the most powerful source of information towards transforming 
+            <h3>About Me</h3><img id="my-pic" src="images/myDefaultPic.jpeg" alt="A picture of me looking terrible" />
+            <p>
+                A Junior Full Stack Web Developer and Cyber Security Analyst looking to utilize the most powerful source of information towards transforming 
                 the world even further. My past experiences in manual labor and fitness have shaped my approach in the tech 
                 industry to be client-centered and collaborative. My curiosity and divergent outlook towards the world 
                 resulted in a fascination with technology, as I see the boundless ways it can provoke and promote new and 
@@ -52,7 +53,8 @@
                 work with different personality types. Interests in science have led me to reflect on the cosmic ways in 
                 which individuals, society, and nature interact and affect each other through an infinite amount of 
                 perceivable spectrums. I strive to utilize my optimistic outlook in minimizing the divide 
-                and connecting individuals. </p>
+                and connecting individuals. 
+            </p>
         </section>  <!-- end of 'about me' -->
 
         <section id="projects" class="text hidden">    <!-- start of 'projects' -->
@@ -73,18 +75,29 @@
         <section id="skills" class="text hidden">  <!-- start of 'skills' -->
             <h3>Skills</h3>
             <h4 class="brown">Front End</h4>
-                <p>Javascript, React, HTML, CSS, Redux, Wordpress</p>
+            <p>Javascript, React, Node.js, Netlify, Git, Figma, Wordpress, Bootstrap, Material UI, Monaco-Editor, Testing library</p>
             <h4 class="brown">Back End</h4>
-                <p>SQL, Node.js, Express, API Creation/ Implementation, Heroku, Firebase</p>
+            <p>SQL, Node.js, Express, API Creation/ Implementation, Heroku, Render, Firebase, Postman, Postgres</p>
         </section>  <!-- end of 'skills' -->
+        
+        <section id="cyber" class="text hidden">  <!-- start of 'cyber' -->
+            <h3>Cyber Security</h3>
+            <img id="cyber-img" src="images/kali-mr-robot.png" alt="Coolest hacker show" />
+            <h4>Cyber Skills</h4>
+            <p>
+                Python, JavaScript, SQL, Linux, AWS, Cisco Intermediary/Endpoint Device Configuration, 
+                Burp Suite, Wazuh, OWASP Zap, Wireshark, Packet/Event Analysis, Networking Concepts
+            </p>
+        </section>  <!-- end of 'cyber' -->
+
     </main>
 
 
     <footer id="contact">
         <h2 class="text white">Contact</h2>
-            <div id="footer1"><a class="white" href="https://www.linkedin.com/in/ivancastillopursuit/" target='_blank'>LinkedIn</a></div>
-            <div id="footer2"><a class="white" href="https://github.com/IvanCastillo1986" target='_blank'>GitHub</a></div>
-            <div id="footer3"><a class="white" href="mailto: ivancastillo@pursuit.org" target='_blank'>E-mail</a></div>
+        <div id="footer1"><a class="white" href="https://www.linkedin.com/in/ivancastillopursuit/" target='_blank'>LinkedIn</a></div>
+        <div id="footer2"><a class="white" href="https://github.com/IvanCastillo1986" target='_blank'>GitHub</a></div>
+        <div id="footer3"><a class="white" href="mailto: ivancastillo@pursuit.org" target='_blank'>E-mail</a></div>
     </footer>
     
 </body>
