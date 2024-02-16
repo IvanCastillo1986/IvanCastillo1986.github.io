@@ -165,9 +165,6 @@ main h4 {
     margin-right: 10%;
     margin-left: 10%;
 }
-#projects p {
-    margin-top: 30px;
-}
 #projects img {
     width: 60%;
     border: 3px solid #0400f8;
@@ -358,6 +355,20 @@ footer h2 {
 #projects {
     text-align: right;
 }
-#snowman {
+.project {
+    margin-bottom: 60px;
+}
+.project:first-of-type {
+    margin-top: 100px;
+}
+.project:nth-child(odd) {
     text-align: left;
+}
+.project .title {
+    color: brown;
+    margin-bottom: 10px;
+}
+.project .description {
+    margin: 10px 0;
+    margin-top: 10px;
 }
