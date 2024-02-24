@@ -1,10 +1,12 @@
-# Personal Web Site
+# My Portfolio Website
+
+Welcome to my portfolio!
+Wanted to introduce you all to a piece of me.
+Enjoy my site, where you are welcomed by my android, The Gatekeeper.
 
 
 
-
-
-
+<!-- 
 
 ## Introduction
 
@@ -192,4 +194,4 @@ Your site needs to implement all user stories and meet the UI/UX criteria. There
 4. **Contact links**:
    You can put it at the bottom of your page as a footer or in a contact me section. A good font with tons of social icons is [FontAwesome](https://fontawesome.com/)
 
-5. **Other**: (Optional) Anything else with things you may want to include, if you write, then a blog section, if you paint or photograph then a gallery section etc.
+5. **Other**: (Optional) Anything else with things you may want to include, if you write, then a blog section, if you paint or photograph then a gallery section etc. -->

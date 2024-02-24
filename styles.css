@@ -165,11 +165,43 @@ main h4 {
     margin-right: 10%;
     margin-left: 10%;
 }
-#projects img {
+
+#projects {
+    text-align: right;
+}
+.project {
+    margin-bottom: 60px;
+}
+.project img {
     width: 60%;
     border: 3px solid #0400f8;
     border-radius: 10px;
     box-shadow: 5px 10px 20px;
+}
+.project:first-of-type {
+    margin-top: 100px;
+}
+.project:nth-child(odd) {
+    text-align: left;
+}
+.project .title {
+    color: brown;
+    margin-bottom: 10px;
+}
+.project .description {
+    margin: 10px 0;
+    margin-top: 10px;
+}
+.project a {
+    position: relative;
+}
+.project a .work-in-progress-icon {
+    width: 80px;
+    border: none;
+    box-shadow: none;
+    position: absolute;
+    bottom: -30px;
+    right: -15px;
 }
 
 
@@ -346,29 +378,4 @@ footer h2 {
     footer div:last-of-type {
         padding-bottom: 0;
     }
-}
-
-
-
-
-
-#projects {
-    text-align: right;
-}
-.project {
-    margin-bottom: 60px;
-}
-.project:first-of-type {
-    margin-top: 100px;
-}
-.project:nth-child(odd) {
-    text-align: left;
-}
-.project .title {
-    color: brown;
-    margin-bottom: 10px;
-}
-.project .description {
-    margin: 10px 0;
-    margin-top: 10px;
 }
