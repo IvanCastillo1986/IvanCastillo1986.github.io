@@ -1,4 +1,4 @@
-console.log('ivan-site.js works!')
+// console.log('ivan-site.js works!')
 
 /* 
 index.html
@@ -13,7 +13,7 @@ get reference to cyberLink and create element variable
 add eventListener to click on cyberLink
     run hideAllSections() to set all other elements to display = 'none'
     display cyberSection by changing element css to display = 'block'
-    saySomethingElse()
+    changeBubbleText()
 
 */
 
@@ -42,11 +42,15 @@ const hideAllSections = () => {
     cyberSection.style.display = 'none'
 }
 
+// declare variable for setTimeout to be cleared and executed in changeBubbleText()
+let newLocationPrompt
+
 // display Robot's default text. Will call whenever a nav link is clicked
-const saySomethingElse = () => {
+const changeBubbleText = () => {
+    clearTimeout(newLocationPrompt)
     navPrompt.textContent = ''
     navPrompt.textContent = 'We have arrived homonid. Enjoy your stay. Scroll down.'
-    setTimeout(function() {
+    newLocationPrompt = setTimeout(function() {
         navPrompt.style.paddingLeft = '30px';
         navPrompt.innerHTML = 'You\'re still here homosapien?<br>Do you have a new location in mind?'
     }, 5000)
@@ -62,7 +66,7 @@ const saySomethingElse = () => {
 //     link.addEventListener("click", () => {
 //         hideAllSections()
 //         link.style.display = "block";
-//         saySomethingElse()
+//         changeBubbleText()
 //     })
 // }
 // clickMe(aboutMeLink)
@@ -71,25 +75,25 @@ const saySomethingElse = () => {
 aboutMeLink.addEventListener("click", () => {
     hideAllSections()
     aboutMeSection.style.display = "block";
-    saySomethingElse()
+    changeBubbleText()
 })
 
 projectsLink.addEventListener("click", () => {
     hideAllSections()
     projectsSection.style.display = "block"
-    saySomethingElse()
+    changeBubbleText()
 })
 
 skillsLink.addEventListener("click", () => {
     hideAllSections()
     skillsSection.style.display = "block"
-    saySomethingElse()
+    changeBubbleText()
 })
 
 cyberLink.addEventListener("click", () => {
     hideAllSections()
     cyberSection.style.display = "block"
-    saySomethingElse()
+    changeBubbleText()
 })
 
 
