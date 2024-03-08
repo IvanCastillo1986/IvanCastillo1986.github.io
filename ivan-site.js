@@ -17,21 +17,25 @@ add eventListener to click on cyberLink
 
 */
 
-let main = document.querySelector('main')
+const main = document.querySelector('main')
 
-let goHome = document.getElementById('go-home')
+const goHome = document.getElementById('go-home')
+const lineOne = document.getElementById('line-one')
+const lineTwo = document.getElementById('line-two')
+const lineThree = document.getElementById('line-three')
+const lineFour = document.getElementById('line-four')
 
-let aboutMeSection = document.getElementById("about-me")
-let projectsSection = document.getElementById("projects")
-let skillsSection = document.getElementById("skills")
-let cyberSection = document.getElementById("cyber")
+const aboutMeSection = document.getElementById("about-me")
+const projectsSection = document.getElementById("projects")
+const skillsSection = document.getElementById("skills")
+const cyberSection = document.getElementById("cyber")
 
-let aboutMeLink = document.getElementById("nav-about")
-let projectsLink = document.getElementById("nav-projects")
-let skillsLink = document.getElementById("nav-skills")
-let cyberLink = document.getElementById("nav-cyber")
+const aboutMeLink = document.getElementById("nav-about")
+const projectsLink = document.getElementById("nav-projects")
+const skillsLink = document.getElementById("nav-skills")
+const cyberLink = document.getElementById("nav-cyber")
 
-let navPrompt = document.getElementById("nav-prompt")
+const navPrompt = document.getElementById("nav-prompt")
 
 
 // hide every <Section> on nav link click, so that we can display new section
@@ -42,65 +46,87 @@ const hideAllSections = () => {
     cyberSection.style.display = 'none'
 }
 
-// declare variable for setTimeout to be cleared and executed in changeBubbleText()
-let newLocationPrompt
-
-// display Robot's default text. Will call whenever a nav link is clicked
-const changeBubbleText = () => {
-    clearTimeout(newLocationPrompt)
-    navPrompt.textContent = ''
-    navPrompt.textContent = 'We have arrived homonid. Enjoy your stay. Scroll down.'
-    newLocationPrompt = setTimeout(function() {
-        navPrompt.style.paddingLeft = '30px';
-        navPrompt.innerHTML = 'You\'re still here homosapien?<br>Do you have a new location in mind?'
-    }, 5000)
+const hideNavPrompt = () => {
+    lineOne.style.display = 'none'
+    lineTwo.style.display = 'none'
+    lineThree.style.display = 'none'
+    lineFour.style.display = 'none'
 }
 
+let newLocationPrompt
+// change Robot's text. Will call whenever a nav link is clicked
+const changeBubbleText = (home) => {
+    // if home, clear all timeouts
+    if (home) {
+        lineOne.innerHTML = 'Welcome traveler.'
+        lineTwo.innerHTML = 'I am \'The Gatekeeper\'.'
+        lineThree.innerHTML = 'A sentient android built by Ivan.'
+        lineFour.innerHTML = 'How would you like to proceed human?'
+    
+        lineOne.style.display = 'block'
+        lineTwo.style.display = 'block'
+        lineThree.style.display = 'block'
+        lineFour.style.display = 'block'
+    } else {
+        hideNavPrompt()
+        clearTimeout(newLocationPrompt)
+        // declare variable for setTimeout to be cleared and executed in changeBubbleText()
 
+        lineOne.style.display = 'block'
+        lineOne.innerHTML = 'We have arrived homonid'
+        lineTwo.style.display = 'block'
+        lineTwo.innerHTML = 'Enjoy your stay. Scroll down'
 
+        newLocationPrompt = setTimeout(function() {
+            lineOne.innerHTML = 'You\'re still here homosapien?'
+            lineTwo.innerHTML = 'Do you have a new location in mind?'
+        }, 5000)
+    }
+}
 
-// Try to make a function that removes the recurrence of the same code in the addEventListener
-
-
-// function clickMe(link) {
-//     link.addEventListener("click", () => {
-//         hideAllSections()
-//         link.style.display = "block";
-//         changeBubbleText()
-//     })
-// }
-// clickMe(aboutMeLink)
 
 
 aboutMeLink.addEventListener("click", () => {
     hideAllSections()
     aboutMeSection.style.display = "block";
-    changeBubbleText()
+    changeBubbleText(['We have arrived homonid', 'Enjoy your stay. Scroll down', 'You\'re still here homosapien?', 'Do you have a new location in mind?'], false)
 })
 
 projectsLink.addEventListener("click", () => {
     hideAllSections()
     projectsSection.style.display = "block"
-    changeBubbleText()
+    changeBubbleText(['We have arrived homonid', 'Enjoy your stay. Scroll down', 'You\'re still here homosapien?', 'Do you have a new location in mind?'], false)
 })
 
 skillsLink.addEventListener("click", () => {
     hideAllSections()
     skillsSection.style.display = "block"
-    changeBubbleText()
+    changeBubbleText(['We have arrived homonid', 'Enjoy your stay. Scroll down', 'You\'re still here homosapien?', 'Do you have a new location in mind?'], false)
 })
 
 cyberLink.addEventListener("click", () => {
     hideAllSections()
     cyberSection.style.display = "block"
-    changeBubbleText()
+    changeBubbleText(['We have arrived homonid', 'Enjoy your stay. Scroll down', 'You\'re still here homosapien?', 'Do you have a new location in mind?'], false)
 })
 
 
 goHome.addEventListener('click', () => {
-    navPrompt.innerHTML = 'Welcome traveler.<br>I am \'The Gatekeeper\'.<br>A sentient lifeform built by Ivan.<br><br>How would you like to proceed human?'
-    hideAllSections()
+    changeBubbleText([
+        'Welcome traveler.', 
+        'I am \'The Gatekeeper\'.', 
+        'A sentient android built by Ivan.', 
+        'How would you like to proceed human?'
+    ], true)
+    // lineOne.innerHTML = 'Welcome traveler.'
+    // lineTwo.innerHTML = 'I am \'The Gatekeeper\'.'
+    // lineThree.innerHTML = 'A sentient android built by Ivan.'
+    // lineFour.innerHTML = 'How would you like to proceed human?'
 
+    // lineThree.style.display = 'block'
+    // lineFour.style.display = 'block'
+
+    hideAllSections()
 })
 goHome.addEventListener('mouseover', () => {
     goHome.style.color = '#02EFEE';

@@ -1,9 +1,16 @@
 # My Portfolio Website
+View at:  https://ivancastillo1986.github.io/
 
 Welcome to my portfolio!
 Wanted to introduce you all to a piece of me.
 Enjoy my site, where you are welcomed by my android, The Gatekeeper.
 
+This project uses vanilla JavaScript. 
+I wanted to always hold a piece of the early days of my web development education, so I decided not to update this to some fancy framework or library. 
+
+It gives me the chance to practice with browser-side JavaScript. I can develop the patterns I learned from React. I can practice creating components for re-usability in vanilla JavaScript. Abstractions might make me lazy.
+
+It also provides me the opportunity to explore how to secure a vanilla JavaScript web site as I progress through a cyber-security fellowship.
 
 
 <!-- 
