@@ -1,29 +1,8 @@
 // console.log('ivan-site.js works!')
 
-/* 
-index.html
-The Link is in the navigation bar
-The Section is in the Main page
-
-ivan-site.js
-NOTE: this is the flow for displaying a certain Section (looks like different page to user)
-
-get reference to cyberSection and create element variable
-get reference to cyberLink and create element variable
-add eventListener to click on cyberLink
-    run hideAllSections() to set all other elements to display = 'none'
-    display cyberSection by changing element css to display = 'block'
-    changeBubbleText()
-
-*/
-
 const main = document.querySelector('main')
 
 const goHome = document.getElementById('go-home')
-const lineOne = document.getElementById('line-one')
-const lineTwo = document.getElementById('line-two')
-const lineThree = document.getElementById('line-three')
-const lineFour = document.getElementById('line-four')
 
 const aboutMeSection = document.getElementById("about-me")
 const projectsSection = document.getElementById("projects")
@@ -46,91 +25,88 @@ const hideAllSections = () => {
     cyberSection.style.display = 'none'
 }
 
-const hideNavPrompt = () => {
-    lineOne.style.display = 'none'
-    lineTwo.style.display = 'none'
-    lineThree.style.display = 'none'
-    lineFour.style.display = 'none'
-}
+
 
 let newLocationPrompt
 // change Robot's text. Will call whenever a nav link is clicked
-const changeBubbleText = (home) => {
-    // if home, clear all timeouts
-    if (home) {
-        lineOne.innerHTML = 'Welcome traveler.'
-        lineTwo.innerHTML = 'I am \'The Gatekeeper\'.'
-        lineThree.innerHTML = 'A sentient android built by Ivan.'
-        lineFour.innerHTML = 'How would you like to proceed human?'
-    
-        lineOne.style.display = 'block'
-        lineTwo.style.display = 'block'
-        lineThree.style.display = 'block'
-        lineFour.style.display = 'block'
-    } else {
-        hideNavPrompt()
-        clearTimeout(newLocationPrompt)
-        // declare variable for setTimeout to be cleared and executed in changeBubbleText()
+const changeBubbleText = (textArr) => {
+    // remove any lingering timeouts
+    clearTimeout(newLocationPrompt)
 
-        lineOne.style.display = 'block'
-        lineOne.innerHTML = 'We have arrived homonid'
-        lineTwo.style.display = 'block'
-        lineTwo.innerHTML = 'Enjoy your stay. Scroll down'
+    // remove all elements from navPrompt
+    navPrompt.innerHTML = ''
 
-        newLocationPrompt = setTimeout(function() {
-            lineOne.innerHTML = 'You\'re still here homosapien?'
-            lineTwo.innerHTML = 'Do you have a new location in mind?'
-        }, 5000)
+    // iterate textArr[], for each sentence in textArr
+    for (let i = 0; i < textArr.length; i++) {
+        // create new line element, and append it to navPrompt
+        const newLine = document.createElement('div')
+        newLine.id = 'line' + (i + 1)
+        newLine.textContent = textArr[i]
+        
+        navPrompt.appendChild(newLine)
     }
-}
+
+
+    newLocationPrompt = setTimeout(function() {
+        line1.textContent = 'You\'re still here homosapien?'
+        line2.textContent = 'Do you have a new location in mind?'
+
+        // if there are any extra lines, delete them
+        if (textArr.length > 2) {
+            // iterate textArr[]
+            for (let i = 2; i < textArr.length; i++) {
+                // remove current element of textArr[]
+                const elToRemove = document.getElementById('line' + i);
+                navPrompt.removeChild(elToRemove);
+            }
+        }
+    }, 4000);
+};
 
 
 
 aboutMeLink.addEventListener("click", () => {
-    hideAllSections()
+    hideAllSections();
     aboutMeSection.style.display = "block";
-    changeBubbleText(['We have arrived homonid', 'Enjoy your stay. Scroll down', 'You\'re still here homosapien?', 'Do you have a new location in mind?'], false)
-})
+    changeBubbleText(['We have arrived homonid', 'Enjoy your stay. Scroll down']);
+});
 
 projectsLink.addEventListener("click", () => {
-    hideAllSections()
-    projectsSection.style.display = "block"
-    changeBubbleText(['We have arrived homonid', 'Enjoy your stay. Scroll down', 'You\'re still here homosapien?', 'Do you have a new location in mind?'], false)
-})
+    hideAllSections();
+    projectsSection.style.display = "block";
+    changeBubbleText(['We have arrived homonid', 'Enjoy your stay. Scroll down']);
+});
 
 skillsLink.addEventListener("click", () => {
-    hideAllSections()
-    skillsSection.style.display = "block"
-    changeBubbleText(['We have arrived homonid', 'Enjoy your stay. Scroll down', 'You\'re still here homosapien?', 'Do you have a new location in mind?'], false)
-})
+    hideAllSections();
+    skillsSection.style.display = "block";
+    changeBubbleText(['We have arrived homonid', 'Enjoy your stay. Scroll down']);
+});
 
 cyberLink.addEventListener("click", () => {
-    hideAllSections()
-    cyberSection.style.display = "block"
-    changeBubbleText(['We have arrived homonid', 'Enjoy your stay. Scroll down', 'You\'re still here homosapien?', 'Do you have a new location in mind?'], false)
-})
+    hideAllSections();
+    cyberSection.style.display = "block";
+    changeBubbleText(['We have arrived homonid', 'Enjoy your stay. Scroll down']);
+});
 
 
 goHome.addEventListener('click', () => {
+    hideAllSections();
+    
     changeBubbleText([
         'Welcome traveler.', 
         'I am \'The Gatekeeper\'.', 
         'A sentient android built by Ivan.', 
         'How would you like to proceed human?'
-    ], true)
-    // lineOne.innerHTML = 'Welcome traveler.'
-    // lineTwo.innerHTML = 'I am \'The Gatekeeper\'.'
-    // lineThree.innerHTML = 'A sentient android built by Ivan.'
-    // lineFour.innerHTML = 'How would you like to proceed human?'
+    ]);
 
-    // lineThree.style.display = 'block'
-    // lineFour.style.display = 'block'
+    clearTimeout(newLocationPrompt);
+});
 
-    hideAllSections()
-})
+
 goHome.addEventListener('mouseover', () => {
     goHome.style.color = '#02EFEE';
     setTimeout(() => {
         goHome.style.color = 'blue';
     }, 500);
-}, false)
+}, false);

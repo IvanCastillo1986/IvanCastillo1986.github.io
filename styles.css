@@ -91,6 +91,7 @@ nav {
     width: 80%;
     padding: 4%;
 }
+
 #nav-prompt {
     font-size: 1em;
     text-align: center;
@@ -98,20 +99,16 @@ nav {
     padding-bottom: 10px;
     text-transform: uppercase;
 }
-#nav-prompt > div {
-
+#line1 {
 }
-#line-one {
-
+#line2 {
 }
-#line-two {
-
+#line3{
 }
-#line-three {
-}
-#line-four {
+#line4 {
     margin-top: 10px;
 }
+
 nav ul {
     list-style-type: none;
     text-align: center;
