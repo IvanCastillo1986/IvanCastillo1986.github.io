@@ -197,6 +197,9 @@ main h4 {
 }
 
 
+
+/* -------------------------------------- */
+/* start of PROJECTS */
 #projects {
     display: none;
     margin-right: 10%;
@@ -240,6 +243,91 @@ main h4 {
     bottom: -30px;
     right: -15px;
 }
+
+
+@media only screen and (max-width: 750px) {
+    #home {
+        display: flex;
+        flex-direction: column;
+    }
+    #nav-container {
+        padding-bottom: 70px;
+    }
+    nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 30px;
+        right: 0px;
+    }
+    #bubble-pointer {
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        background-color: white;
+        border-radius: 100%;
+        left: auto;
+        right: 30%;
+        bottom: -8%;
+        z-index: -1;
+    }
+    #bubble-pointer::after {
+        content: "";
+        display: inline-block;
+        width: 150px;
+        height: 150px;
+        background-color: #02EFEE;
+        position: absolute;
+        border-radius: 40%;
+        right: 40%;
+        z-index: -2;
+        bottom: -10px;
+    }
+
+
+    nav ul {
+        padding: 0;
+    }
+    #outer-robot {
+        padding-top: 30px;
+        width: 75%;
+    }
+    #robot img {
+    }
+    main {
+        margin: 0 5%;
+    }
+    #about-me {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    #my-pic {
+        width: 50%;
+    }
+    #about-me p {
+        font-size: 14px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+
+    #projects {
+        text-align: unset;
+    }
+    .project .title {
+        text-align: center;
+    }
+    .project .description {
+        font-size: .8em;
+    }
+    .project img {
+        width: 90%;
+    }
+    
+}
+/* end of 750px media query */
+
+/* -------------------------------------- */
+
 
 
 #skills {
@@ -322,11 +410,13 @@ footer h2 {
         display: flex;
     }
 }
+
 @media only screen and (max-width: 1100px) {
     #outer-robot {
         padding-top: 170px;
     }
 }
+
 @media only screen and (max-width: 750px) {
     #home {
         display: flex;
@@ -335,23 +425,12 @@ footer h2 {
     #nav-container {
         padding-bottom: 70px;
     }
-    /* nav {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    
-        background-color: white;
-        border-radius: 15em;
-        width: 80%;
-        padding: 4%;
-    } */
-    /* 750px */
     nav {
         display: flex;
         flex-direction: column;
         justify-content: center;
         padding: 30px;
+        right: 0px;
     }
     #bubble-pointer {
         position: absolute;
@@ -388,7 +467,7 @@ footer h2 {
     #robot img {
     }
     main {
-        margin-right: 0;
+        margin: 0 5%;
     }
     #about-me {
         margin-left: 5%;
@@ -401,10 +480,26 @@ footer h2 {
         font-size: 14px;
         font-family: Arial, Helvetica, sans-serif;
     }
-    #projects img {
-        width: 90%;
+
+
+    #projects {
+        text-align: unset;
     }
+    .project:nth-child(odd) {
+        text-align: unset;
+    }
+    .project .title {
+        text-align: center;
+    }
+    .project .description {
+        font-size: .8em;
+    }
+    .project img {
+        width: 100%;
+    }
+    
 }
+
 @media only screen and (max-width: 500px) {
     nav {
         width: 80%;

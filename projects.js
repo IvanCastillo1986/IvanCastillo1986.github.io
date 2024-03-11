@@ -28,7 +28,7 @@ export const projectsArray = [
         unfinished: true,
         githubUrl: "https://github.com/IvanCastillo1986/weather_channel_tribute",
         appTitle: "The Weather Channel",
-        appDescription: "App clone of 90s 'The Weather Channel'",
+        appDescription: "Aesthetics from 90s 'The Weather Channel'",
         appUrl: "https://the-90s-weather-channel.netlify.app/",
         imgSrc: "images/90s-weather-channel.png",
         imgAlt: "A screenshot of The Weather Channel"

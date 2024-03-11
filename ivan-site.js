@@ -48,7 +48,7 @@ const renderProject = (project) => {
     projectDiv.appendChild(description)
 
     if (project.unfinished) {
-        // adds work-in-progress icon to unifinished project's
+        // adds work-in-progress icon to unfinished projects
         const projectImgContainer = document.createElement('div')
         projectImgContainer.className = 'project-img-container'
 
