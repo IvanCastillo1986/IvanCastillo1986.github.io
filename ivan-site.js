@@ -1,4 +1,5 @@
-// console.log('ivan-site.js works!')
+import { projectsArray } from "./projects.js"
+
 
 const main = document.querySelector('main')
 
@@ -16,6 +17,44 @@ const cyberLink = document.getElementById("nav-cyber")
 
 const navPrompt = document.getElementById("nav-prompt")
 
+
+const renderProject = (project) => {
+    // This re-usable function creates a <project> div, containing a:
+    //  title that links to github, a decription, and an img that links to app
+    const projectDiv = document.createElement('div')
+    projectDiv.className = 'project'
+
+    const githubAnchor = document.createElement('a')
+    githubAnchor.href = project.githubUrl
+
+    const title = document.createElement('p')
+    title.className = 'title'
+    title.textContent = project.appTitle
+    githubAnchor.appendChild(title)
+
+    const description = document.createElement('p')
+    description.className = 'description'
+    description.textContent = project.appDescription
+    
+    const appAnchor = document.createElement('a')
+    appAnchor.href = project.appUrl
+
+    const img = document.createElement('img')
+    img.src = project.imgSrc
+    img.alt = project.imgAlt
+    appAnchor.appendChild(img)
+
+    projectDiv.appendChild(githubAnchor)
+    projectDiv.appendChild(description)
+    projectDiv.appendChild(appAnchor)
+    
+    return projectDiv
+}
+
+// We will map through each item in projectsArray, and append each item to Projects section in index.html
+for (const project of projectsArray) {
+    projectsSection.appendChild(renderProject(project))
+}
 
 // hide every <Section> on nav link click, so that we can display new section
 const hideAllSections = () => {
