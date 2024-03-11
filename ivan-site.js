@@ -46,15 +46,51 @@ const renderProject = (project) => {
 
     projectDiv.appendChild(githubAnchor)
     projectDiv.appendChild(description)
-    projectDiv.appendChild(appAnchor)
+
+    if (project.unfinished) {
+        // adds work-in-progress icon to unifinished project's
+        const projectImgContainer = document.createElement('div')
+        projectImgContainer.className = 'project-img-container'
+
+        const workInProgressIcon = document.createElement('img')
+        workInProgressIcon.className = 'work-in-progress-icon'
+        workInProgressIcon.src = 'images/work-in-progress.png'
+        workInProgressIcon.alt = 'A work in progress sign'
+        
+        appAnchor.appendChild(workInProgressIcon)
+        projectImgContainer.appendChild(appAnchor)
+        projectDiv.appendChild(projectImgContainer)
+        
+    } else {
+        projectDiv.appendChild(appAnchor)
+    }
     
     return projectDiv
 }
+
+{/* 
+<div class="project">
+    <a href="https://github.com/IvanCastillo1986/art-gallery">
+    <p class="title">Code Canvas Corner</p>
+    </a>
+
+    <p class="description">Art Gallery for coded art</p>
+    
+    <div class="project-img-container">
+        <a href="https://code-canvas.netlify.app/">
+            <img src="images/code-canvas-corner.png" alt="A screenshot of Code Canvas Corner web app" />
+            <img class="work-in-progress-icon" src="images/work-in-progress.png" alt="A work in progress sign" />
+        </a>
+    </div>
+
+</div> 
+*/}
 
 // We will map through each item in projectsArray, and append each item to Projects section in index.html
 for (const project of projectsArray) {
     projectsSection.appendChild(renderProject(project))
 }
+
 
 // hide every <Section> on nav link click, so that we can display new section
 const hideAllSections = () => {

@@ -16,6 +16,7 @@ export const projectsArray = [
         imgAlt: "A screenshot of Retro Zone Logs web app"
     },
     {
+        unfinished: true,
         githubUrl: "https://github.com/IvanCastillo1986/art-gallery",
         appTitle: "Code Canvas Corner",
         appDescription: "Art Gallery for coded art",
@@ -24,6 +25,7 @@ export const projectsArray = [
         imgAlt: "A screenshot of Code Canvas Corner web app"
     },
     {
+        unfinished: true,
         githubUrl: "https://github.com/IvanCastillo1986/weather_channel_tribute",
         appTitle: "The Weather Channel",
         appDescription: "App clone of 90s 'The Weather Channel'",
