@@ -215,6 +215,7 @@ main h4 {
 .project img {
     width: 60%;
     border: 3px solid #0400f8;
+    box-sizing: border-box;
     border-radius: 10px;
     box-shadow: 5px 10px 20px;
 }
@@ -245,93 +246,12 @@ main h4 {
 }
 
 
-@media only screen and (max-width: 750px) {
-    #home {
-        display: flex;
-        flex-direction: column;
-    }
-    #nav-container {
-        padding-bottom: 70px;
-    }
-    nav {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 30px;
-        right: 0px;
-    }
-    #bubble-pointer {
-        position: absolute;
-        width: 150px;
-        height: 150px;
-        background-color: white;
-        border-radius: 100%;
-        left: auto;
-        right: 30%;
-        bottom: -8%;
-        z-index: -1;
-    }
-    #bubble-pointer::after {
-        content: "";
-        display: inline-block;
-        width: 150px;
-        height: 150px;
-        background-color: #02EFEE;
-        position: absolute;
-        border-radius: 40%;
-        right: 40%;
-        z-index: -2;
-        bottom: -10px;
-    }
-
-
-    nav ul {
-        padding: 0;
-    }
-    #outer-robot {
-        padding-top: 30px;
-        width: 75%;
-    }
-    #robot img {
-    }
-    main {
-        margin: 0 5%;
-    }
-    #about-me {
-        margin-left: 5%;
-        margin-right: 5%;
-    }
-    #my-pic {
-        width: 50%;
-    }
-    #about-me p {
-        font-size: 14px;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-
-
-    #projects {
-        text-align: unset;
-    }
-    .project .title {
-        text-align: center;
-    }
-    .project .description {
-        font-size: .8em;
-    }
-    .project img {
-        width: 90%;
-    }
-    
-}
-/* end of 750px media query */
-
 /* -------------------------------------- */
 
 
 
 #skills {
-    margin-left: 10%;
+    margin-left: 5%;
     display: none;
 }
 
@@ -342,9 +262,13 @@ main h4 {
 #cyber h3 {
     margin-bottom: 80px;
 }
-#cyber-img {
+#cyber img {
     width: 100%;
     margin-bottom: 80px;
+}
+
+#cyber-img-small {
+    display: none;
 }
 
 #my-pic {
@@ -478,7 +402,7 @@ footer h2 {
     }
     #about-me p {
         font-size: 14px;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: monospace, Arial, Helvetica, sans-serif;
     }
 
 
@@ -497,7 +421,13 @@ footer h2 {
     .project img {
         width: 100%;
     }
-    
+
+    #cyber-img-small {
+        display: block;
+    }
+    #cyber-img-large {
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 500px) {
