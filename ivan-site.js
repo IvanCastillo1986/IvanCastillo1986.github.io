@@ -13,8 +13,6 @@ navigateToPage()  :
 */
 
 
-const main = document.querySelector('main')
-
 const goHome = document.getElementById('go-home')
 
 const aboutMeSection = document.getElementById("about-me")
@@ -28,6 +26,7 @@ const skillsLink = document.getElementById("nav-skills")
 const cyberLink = document.getElementById("nav-cyber")
 
 const navPrompt = document.getElementById("nav-prompt")
+const robot = document.getElementById("robot")
 
 
 const renderProject = (project) => {
@@ -110,26 +109,24 @@ const changeBubbleText = (textArr) => {
     // remove all elements from navPrompt
     navPrompt.innerHTML = ''
 
-    // iterate textArr[], for each sentence in textArr
-    for (let i = 0; i < textArr.length; i++) {
-        // create new line element, and append it to navPrompt
+    // function to create new line
+    function createNewLine(idx) {
         const newLine = document.createElement('div')
-        newLine.id = 'line' + (i + 1)
-        newLine.textContent = textArr[i]
-        
-        navPrompt.appendChild(newLine)
+        newLine.id = 'line' + (idx + 1)
+        newLine.textContent = textArr[idx]
+        return newLine
     }
-
+    // forEach el in textArr, create new line element, and append it to navPrompt
+    for (let i = 0; i < textArr.length; i++) {
+        navPrompt.appendChild(createNewLine(i))
+    }
+    
     newLocationPrompt = setTimeout(function() {
-        line1.textContent = 'You\'re still here homosapien?'
-        line2.textContent = 'Do you have a new location in mind?'
+        navPrompt.innerHTML = ''
+        textArr = ["You\'re still here homosapien?", "Do you have a new location in mind?"]
 
-        // if there are any extra lines, delete them
-        if (textArr.length > 2) {
-            for (let i = 2; i < textArr.length; i++) {
-                const elToRemove = document.getElementById('line' + i);
-                navPrompt.removeChild(elToRemove);
-            }
+        for (let i = 0; i < textArr.length; i++) {
+            navPrompt.appendChild(createNewLine(i))
         }
     }, 4000);
 };
@@ -140,7 +137,7 @@ function navigateToPage(anchorElement, sectionToRender, textSpeechArray) {
     anchorElement.addEventListener("click", () => {
         if (sectionToRender.style.display === 'block') {
             // if the clicked link is already the displayed section, display text as "you're already here"
-            changeBubbleText(['You\'re already here visitor.', 'Choose another location.'])
+            changeBubbleText(["You\'re already here visitor.", "Choose another location."])
         } else {
             // else, navigate to new page
             hideAllSections();
@@ -150,25 +147,24 @@ function navigateToPage(anchorElement, sectionToRender, textSpeechArray) {
     });
 };
 
-navigateToPage(aboutMeLink, aboutMeSection, ['We have arrived homonid.', 'Enjoy your stay. Scroll down']);
-navigateToPage(projectsLink, projectsSection, ['We have arrived homonid.', 'Enjoy your stay. Scroll down']);
-navigateToPage(skillsLink, skillsSection, ['We have arrived homonid.', 'Enjoy your stay. Scroll down']);
-navigateToPage(cyberLink, cyberSection, ['We have arrived homonid.', 'Enjoy your stay. Scroll down']);
+navigateToPage(aboutMeLink, aboutMeSection, ["We have arrived homonid.", "Enjoy your stay. Scroll down"]);
+navigateToPage(projectsLink, projectsSection, ["We have arrived homonid.", "Enjoy your stay. Scroll down"]);
+navigateToPage(skillsLink, skillsSection, ["We have arrived homonid.", "Enjoy your stay. Scroll down"]);
+navigateToPage(cyberLink, cyberSection, ["We have arrived homonid.", "Enjoy your stay. Scroll down"]);
 
 
 goHome.addEventListener('click', () => {
     hideAllSections();
     
     changeBubbleText([
-        'Welcome traveler.', 
-        'I am \'The Gatekeeper\'.', 
-        'A sentient android built by Ivan.', 
-        'How would you like to proceed human?'
+        "Welcome traveler.", 
+        "I am 'The Gatekeeper'.", 
+        "A sentient android built by Ivan.", 
+        "How would you like to proceed human?"
     ]);
 
     clearTimeout(newLocationPrompt);
 });
-
 
 goHome.addEventListener('mouseover', () => {
     goHome.style.color = '#02EFEE';
@@ -178,9 +174,32 @@ goHome.addEventListener('mouseover', () => {
 }, false);
 
 
+// Clicking Robot Functionality
+let numOfHits = 0
+
+const firstHit = ["Hey! Stop that!"]
+const secondHit = ["HEY!", "What did I ever do to you?!"]
+const thirdHit = ["If you don't stop that right now,", "I'm gonna get really mad!"]
+const fourthHit = ["RAAAHHHRRRRWEHWASDFGVSHKJNBCA!!!"]
+
+robot.addEventListener('click', () => {
+    numOfHits++
+    if (numOfHits === 1) changeBubbleText(firstHit)
+    else if (numOfHits === 2) changeBubbleText(secondHit)
+    else if (numOfHits === 3) changeBubbleText(thirdHit)
+    else if (numOfHits >= 4) changeBubbleText(fourthHit)
+});
 
 
 
+
+
+
+
+
+
+
+// ------------------------------------------------------------------------------------------
 
 // removed after replacing with navigateToPage()
 
