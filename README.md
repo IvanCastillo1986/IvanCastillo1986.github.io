@@ -5,12 +5,12 @@ Welcome to my portfolio!
 Wanted to introduce you all to a piece of me.
 Enjoy my site, where you are welcomed by my android, The Gatekeeper.
 
-This project uses vanilla JavaScript. 
-I wanted to always hold a piece of the early days of my web development education, so I decided not to update this to some fancy framework or library. 
+This project uses vanilla JavaScript.
+I wanted to always hold a piece of the early days of my web development education, so I decided not to update this to some fancy framework. Keeping it pure to practice my resourcefulness.
 
-It gives me the chance to practice with browser-side JavaScript. I can develop the patterns I learned from React. I can practice creating components for re-usability in vanilla JavaScript. Abstractions might make me lazy.
+It gives me the chance to practice with client-side JavaScript for the browser. I can develop the patterns I learned from frameworks/libraries such as ReactJS. I can practice creating functions and components for re-usability in vanilla JavaScript. Abstractions make me lazy. 
 
-It also provides me the opportunity to explore how to secure a vanilla JavaScript web site as I progress through a cyber-security fellowship.
+It also provides me the opportunity to explore how to secure a vanilla JavaScript web site as I progress through a cyber-security fellowship. 
 
 
 <!-- 
