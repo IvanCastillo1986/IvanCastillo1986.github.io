@@ -13,8 +13,9 @@ navigateToPage()  :
 */
 
 
-const goHome = document.getElementById('go-home')
+const body = document.querySelector('body')
 
+const homeLink = document.getElementById('go-home')
 const aboutMeSection = document.getElementById("about-me")
 const projectsSection = document.getElementById("projects")
 const skillsSection = document.getElementById("skills")
@@ -69,64 +70,64 @@ const renderProject = (project) => {
 }
 
 function addWorkInProgressIcon(appAnchor) {
-    const projectImgContainer = document.createElement('div')
-    projectImgContainer.className = 'project-img-container'
+    const projectImgContainer = document.createElement('div');
+    projectImgContainer.className = 'project-img-container';
     
-    const workInProgressIcon = document.createElement('img')
-    workInProgressIcon.className = 'work-in-progress-icon'
-    workInProgressIcon.src = 'images/work-in-progress.png'
-    workInProgressIcon.alt = 'A work in progress sign'
+    const workInProgressIcon = document.createElement('img');
+    workInProgressIcon.className = 'work-in-progress-icon';
+    workInProgressIcon.src = 'images/work-in-progress.png';
+    workInProgressIcon.alt = 'A work in progress sign';
     
-    appAnchor.appendChild(workInProgressIcon)
-    projectImgContainer.appendChild(appAnchor)
-    return projectImgContainer
-}
+    appAnchor.appendChild(workInProgressIcon);
+    projectImgContainer.appendChild(appAnchor);
+    return projectImgContainer;
+};
 
 // We will map through each item in projectsArray, and append each item to Projects section in index.html
 for (const project of projectsArray) {
-    projectsSection.appendChild(renderProject(project))
+    projectsSection.appendChild(renderProject(project));
 }
 
 
 
 // hide every <Section> on nav link click, so that we can display new section
 const hideAllSections = () => {
-    aboutMeSection.style.display = 'none'
-    projectsSection.style.display = 'none'
-    skillsSection.style.display = 'none'
-    cyberSection.style.display = 'none'
-}
+    aboutMeSection.style.display = 'none';
+    projectsSection.style.display = 'none';
+    skillsSection.style.display = 'none';
+    cyberSection.style.display = 'none';
+};
 
 
 
-let newLocationPrompt
+let newLocationPrompt;
 
 // change Robot's text. Will call whenever a nav link is clicked
 const changeBubbleText = (textArr) => {
     // remove any lingering timeouts
-    clearTimeout(newLocationPrompt)
+    clearTimeout(newLocationPrompt);
 
     // remove all elements from navPrompt
-    navPrompt.innerHTML = ''
+    navPrompt.innerHTML = '';
 
-    // function to create new line
+    // declare function to create new line
     function createNewLine(idx) {
-        const newLine = document.createElement('div')
-        newLine.id = 'line' + (idx + 1)
-        newLine.textContent = textArr[idx]
-        return newLine
-    }
+        const newLine = document.createElement('div');
+        newLine.id = 'line' + (idx + 1);
+        newLine.textContent = textArr[idx];
+        return newLine;
+    };
     // forEach el in textArr, create new line element, and append it to navPrompt
     for (let i = 0; i < textArr.length; i++) {
-        navPrompt.appendChild(createNewLine(i))
+        navPrompt.appendChild(createNewLine(i));
     }
     
     newLocationPrompt = setTimeout(function() {
-        navPrompt.innerHTML = ''
-        textArr = ["You\'re still here homosapien?", "Do you have a new location in mind?"]
+        navPrompt.innerHTML = '';
+        textArr = ["You\'re still here homosapien?", "Do you have a new location in mind?"];
 
         for (let i = 0; i < textArr.length; i++) {
-            navPrompt.appendChild(createNewLine(i))
+            navPrompt.appendChild(createNewLine(i));
         }
     }, 4000);
 };
@@ -137,7 +138,7 @@ function navigateToPage(anchorElement, sectionToRender, textSpeechArray) {
     anchorElement.addEventListener("click", () => {
         if (sectionToRender.style.display === 'block') {
             // if the clicked link is already the displayed section, display text as "you're already here"
-            changeBubbleText(["You\'re already here visitor.", "Choose another location."])
+            changeBubbleText(["You\'re already here visitor.", "Choose another location."]);
         } else {
             // else, navigate to new page
             hideAllSections();
@@ -153,7 +154,7 @@ navigateToPage(skillsLink, skillsSection, ["We have arrived homonid.", "Enjoy yo
 navigateToPage(cyberLink, cyberSection, ["We have arrived homonid.", "Enjoy your stay. Scroll down"]);
 
 
-goHome.addEventListener('click', () => {
+homeLink.addEventListener('click', () => {
     hideAllSections();
     
     changeBubbleText([
@@ -166,28 +167,50 @@ goHome.addEventListener('click', () => {
     clearTimeout(newLocationPrompt);
 });
 
-goHome.addEventListener('mouseover', () => {
-    goHome.style.color = '#02EFEE';
+homeLink.addEventListener('mouseover', () => {
+    homeLink.style.color = '#02EFEE';
     setTimeout(() => {
-        goHome.style.color = 'blue';
+        homeLink.style.color = 'blue';
     }, 500);
 }, false);
 
 
 // Clicking Robot Functionality
-let numOfHits = 0
+let numOfHits = 0;
 
-const firstHit = ["Hey! Stop that!"]
-const secondHit = ["HEY!", "What did I ever do to you?!"]
-const thirdHit = ["If you don't stop that right now,", "I'm gonna get really mad!"]
-const fourthHit = ["RAAAHHHRRRRWEHWASDFGVSHKJNBCA!!!"]
+const firstHit = ["Hey! Stop that!"];
+const secondHit = ["HEY!", "What did I ever do to you?!"];
+const thirdHit = ["If you don't stop that right now,", "I'm gonna get really mad!"];
+const fourthHit = ["RAAAHHHRRRRWEHWASDFGVSHKJNBCA!!!"];
+
+const bubblePointer = document.getElementById('bubble-pointer');
 
 robot.addEventListener('click', () => {
-    numOfHits++
-    if (numOfHits === 1) changeBubbleText(firstHit)
-    else if (numOfHits === 2) changeBubbleText(secondHit)
-    else if (numOfHits === 3) changeBubbleText(thirdHit)
-    else if (numOfHits >= 4) changeBubbleText(fourthHit)
+    // CSS animation class .useRobotClick changes the style of selected body element
+    // we need to trigger a reflow so that it happens on each click
+    
+    // remove the animation class
+    body.classList.remove('useRobotClick');
+    // trigger reflow
+    void body.offsetWidth;
+    // re-add the class
+    body.classList.add('useRobotClick');
+
+    
+    // here we add a .negativeSpace property to the classList element, since we can't directly access pseudo-elements
+    // we are adding 'negativeSpace' to the bubblePointer's classList (DOMTokenList)
+    // we then have the following selector defined in the CSS file to execute animation:
+    // #bubble-pointer.negativeSpace::after { background-color: black; transition: background-color 0.5s ease; }
+    bubblePointer.classList.remove('negativeSpace');
+    void bubblePointer.offsetWidth;
+    bubblePointer.classList.add('negativeSpace');
+
+    
+    numOfHits++;
+    if (numOfHits === 1) changeBubbleText(firstHit);
+    else if (numOfHits === 2) changeBubbleText(secondHit);
+    else if (numOfHits === 3) changeBubbleText(thirdHit);
+    else if (numOfHits >= 4) changeBubbleText(fourthHit);
 });
 
 
