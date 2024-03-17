@@ -1,8 +1,9 @@
 import { projectsArray } from "./projects.js"
-
+import { cyberDocsArray } from "./cyber-projects.js"
+console.log(cyberDocsArray)
 /*
-renderProject()  :  takes project objects from projects.js and converts them to entry in Projects page
-addWorkInProgressIcon()  :  creates a workInProgress img to add to unfinished projects in renderProject()
+renderWebProject()  :  takes project objects from projects.js and converts them to entry in Projects page
+addWorkInProgressIcon()  :  creates a workInProgress img to add to unfinished projects in renderWebProject()
 
 hideAllSections()  :  
 
@@ -30,7 +31,13 @@ const navPrompt = document.getElementById("nav-prompt")
 const robot = document.getElementById("robot")
 
 
-const renderProject = (project) => {
+
+
+
+// ------------------------------ Projects Page ------------------------------------
+
+
+const renderWebProject = (project) => {
     // This re-usable function creates a <project> div, containing a:
     //  title that links to github, a decription, and an img that links to app
     const projectDiv = document.createElement('div')
@@ -85,10 +92,56 @@ function addWorkInProgressIcon(appAnchor) {
 
 // We will map through each item in projectsArray, and append each item to Projects section in index.html
 for (const project of projectsArray) {
-    projectsSection.appendChild(renderProject(project));
+    projectsSection.appendChild(renderWebProject(project));
 }
 
 
+
+// ------------------------------ Cyber Page ------------------------------------
+
+
+const renderCyberDocument = (doc) => {
+    // take in document{} as args
+    // create a <div> element for it
+    const docDiv = document.createElement('div')
+    // set the className, the url
+    docDiv.className = 'cyber-doc'
+    // create a <p> for title
+    const docTitle = document.createElement('p')
+    docTitle.className = 'title'
+    docTitle.textContent = doc.docTitle
+    // create a <p> for description
+    const docDescription = document.createElement('p')
+    docDescription.className = 'description'
+    // set the textContent to document{} description property
+    docDescription.textContent = doc.docDescription
+    // create anchor
+    const docImgAnchor = document.createElement('a')
+    docImgAnchor.className = 'doc-img-anchor'
+    docImgAnchor.href = doc.docUrl
+    // create img
+    const img = document.createElement('img')
+    img.src = doc.imgSrc
+    img.alt = doc.imgAlt
+    // attach img to anchor
+    docImgAnchor.appendChild(img)
+    // attach title, description, anchor to docDiv
+    docDiv.appendChild(docTitle)
+    docDiv.appendChild(docDescription)
+    docDiv.appendChild(docImgAnchor)
+    // return the document, to be called and appended in loop
+    return docDiv
+}
+
+const cyberDocsSection = document.getElementById('cyber-documentations')
+for (const cyberDoc of cyberDocsArray) {
+    cyberDocsSection.appendChild(renderCyberDocument(cyberDoc))
+}
+
+
+
+
+// ------------------------------ Nav ------------------------------------
 
 // hide every <Section> on nav link click, so that we can display new section
 const hideAllSections = () => {
@@ -97,7 +150,6 @@ const hideAllSections = () => {
     skillsSection.style.display = 'none';
     cyberSection.style.display = 'none';
 };
-
 
 
 let newLocationPrompt;
@@ -131,7 +183,6 @@ const changeBubbleText = (textArr) => {
         }
     }, 4000);
 };
-
 
 
 function navigateToPage(anchorElement, sectionToRender, textSpeechArray) {
