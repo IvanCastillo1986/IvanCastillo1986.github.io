@@ -8,6 +8,15 @@ export const projectsArray = [
         imgAlt: "A screenshot of my Pokemon web app"
     },
     {
+        unfinished: true,
+        githubUrl: "https://github.com/IvanCastillo1986/individual-code-clear",
+        appTitle: "Code Clear",
+        appDescription: "Code quality analyzer",
+        appUrl: "https://code-clear.netlify.app/",
+        imgSrc: "images/Code-Clear-screenshot.png",
+        imgAlt: "A screenshot of Code Clear web app"
+    },
+    {
         githubUrl: "https://github.com/IvanCastillo1986/video-game-log",
         appTitle: "Retro Zone Logs",
         appDescription: "Retro Video Game collector logs",
