@@ -1,3 +1,7 @@
+:root {
+    --size-in-px: calc(96px * 2);
+    --sprite-sheet-width: calc(var(--size-in-px) * 4);
+}
 * {
     margin: 0px;
 }
@@ -9,7 +13,7 @@
     font-family: 'press-start';
     src: url(fonts/press-startk.ttf);
 }
-body{
+body {
     background-color: #02EFEE;
 }
 .text {
@@ -66,20 +70,63 @@ header h2 {
 
 
 
+
 /**********  HOME PAGE */
 #home {
+    width: 100%;
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
+    justify-content: space-evenly;
     padding-top: 30px;
 }
+
+
+
+
+/**********  START OF MEGA MAN */
+
+.robot-container {
+    /*    96px * 4 frames = 384px    */
+    width: var(--size-in-px);
+    height: var(--size-in-px);
+    background-color: red;
+    overflow: hidden;
+    /* the entire sprite sheet is still there, it's just hidden and only showing the currently selected sprite */
+}
+
+/* animation: name, duration, timing-function, delay, iteration-count, direction, fill-mode, play-state, timeline */
+.spritesheet {
+    background-color: rgba(128, 128, 128, 0.381);
+    animation: moveSpritesheet 5s steps(3) infinite;
+    width: var(--sprite-sheet-width);
+}
+
+
+@keyframes moveSpritesheet {
+    /* sprite sheet animation begins at number of frames, minus 1 frame that it begins with */
+    /* 4 frames - 1 = 3 frames */
+    /* 3 frames * 96px(size of frame) = 288px */
+    /* translate3d(-288px,0,0) */
+
+    0% {
+        /* this has to be changed manually */
+        transform: translate3d(-576px, 0, 0);
+    }
+    10% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+/**********  END OF MEGA MAN */
+
+
+
 
 #nav-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
-    width: 100%;
+    align-items: space-around;
+    width: 50%;
 }
 nav {
     position: relative;
@@ -104,7 +151,7 @@ nav {
 }
 #line2 {
 }
-#line3{
+#line3 {
 }
 #line4 {
     margin-top: 10px;
@@ -147,24 +194,7 @@ nav li {
 }
 
 
-#outer-robot {
-    width: 60%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-end;
-    padding-top: 80px;
-    margin-bottom: 60px;
-}
-#robot-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-}
-#robot-container img{
-    width: 72%;
-}
+
 
 
 

@@ -1,6 +1,6 @@
 import { projectsArray } from "./projects.js"
 import { cyberDocsArray } from "./cyber-projects.js"
-console.log(cyberDocsArray)
+
 /*
 renderWebProject()  :  takes project objects from projects.js and converts them to entry in Projects page
 addWorkInProgressIcon()  :  creates a workInProgress img to add to unfinished projects in renderWebProject()
