@@ -1,7 +1,17 @@
 :root {
-    --size-in-px: calc(96px * 2);
-    --sprite-sheet-width: calc(var(--size-in-px) * 4);
+    --size-in-px: calc(96px * 6);
+    --size-in-px-2: calc(96px * 5);
+    --size-in-px-3: calc(96px * 4);
 }
+.pixel-art {
+    image-rendering: pixelated;
+}
+
+/*
+When changing Mega Man size, it has to be done in a two different places:
+--size-in-px
+@keyframes moveSpriteSheet
+*/
 * {
     margin: 0px;
 }
@@ -48,7 +58,6 @@ a:active {
 
 
 
-
 /********** HEADER */
 #header-wrapper {
 }
@@ -71,12 +80,17 @@ header h2 {
 
 
 
+
+
+
+
 /**********  HOME PAGE */
 #home {
     width: 100%;
     display: flex;
+    flex-direction: row-reverse;
     justify-content: space-evenly;
-    padding-top: 30px;
+    padding-top: 10px;
 }
 
 
@@ -84,20 +98,20 @@ header h2 {
 
 /**********  START OF MEGA MAN */
 
-.robot-container {
+#robot-container {
     /*    96px * 4 frames = 384px    */
+    /* background-color: rgba(128, 128, 128, 0.33); */
     width: var(--size-in-px);
-    height: var(--size-in-px);
-    background-color: red;
+    padding-top: 80px;
     overflow: hidden;
     /* the entire sprite sheet is still there, it's just hidden and only showing the currently selected sprite */
 }
 
 /* animation: name, duration, timing-function, delay, iteration-count, direction, fill-mode, play-state, timeline */
-.spritesheet {
-    background-color: rgba(128, 128, 128, 0.381);
+#spritesheet {
+    /* background-color: rgba(128, 128, 128, 0.381); */
     animation: moveSpritesheet 5s steps(3) infinite;
-    width: var(--sprite-sheet-width);
+    width: calc(var(--size-in-px) * 4);
 }
 
 
@@ -109,24 +123,41 @@ header h2 {
 
     0% {
         /* this has to be changed manually */
-        transform: translate3d(-576px, 0, 0);
+        transform: translate3d(calc(var(--size-in-px) * 3 * -1), 0, 0); /* -1728px */
     }
     10% {
         transform: translate3d(0, 0, 0);
     }
 }
 
+@keyframes moveSpritesheet1280 {
+    0% {
+        transform: translate3d(calc(var(--size-in-px) * 3 * -1), 0, 0);
+    }
+    10% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+
 /**********  END OF MEGA MAN */
 
 
 
 
+
+
+
+
+
+/**********  START OF NAV */
 #nav-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: space-around;
     width: 50%;
+    height: 100%;
 }
 nav {
     position: relative;
@@ -136,14 +167,14 @@ nav {
     background-color: white;
     border-radius: 15em;
     width: 80%;
-    padding: 4%;
+    padding: 5% 6% 3%;
 }
 
 #nav-prompt {
     font-size: 1em;
     text-align: center;
     line-height: 1.8em;
-    padding-bottom: 10px;
+    padding-bottom: 30px;
     text-transform: uppercase;
 }
 #line1 {
@@ -160,10 +191,12 @@ nav {
 nav ul {
     list-style-type: none;
     text-align: center;
+    padding-inline-start: 0;
 }
 nav li {
-    line-height: 3em;
+    line-height: 2.4em;
 }
+
 
 #bubble-pointer {
     position: absolute;
@@ -192,6 +225,16 @@ nav li {
 #bubble-pointer.negativeSpace::after {
     animation: robotClick .1s;
 }
+/**********  END OF NAV */
+
+
+
+
+
+
+
+
+
 
 
 
@@ -372,36 +415,118 @@ footer h2 {
 }
 
 
-@media only screen and (max-width: 1280px) {
+/* 
+#nav-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: space-around;
+    width: 50%;
+    height: 100%;
+}
+nav {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 15em;
+    width: 80%;
+    padding: 5% 5% 3%;
+}
+
+#nav-prompt {
+    font-size: 1em;
+    text-align: center;
+    line-height: 1.8em;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+*/
+
+/* #robot-container {
+    width: var(--size-in-px);
+    height: var(--size-in-px);
+    padding-top: 80px;
+    overflow: hidden;
+} */
+
+/* animation: name, duration, timing-function, delay, iteration-count, direction, fill-mode, play-state, timeline */
+/* #spritesheet {
+    animation: moveSpritesheet 5s steps(3) infinite;
+    width: var(--sprite-sheet-width);
+} */
+
+
+
+@media only screen and (max-width: 1100px) {
     nav {
-        font-size: 13px;
-        top: 0;
-        right: 25px;
+        font-size: .9em;
     }
     #nav-prompt {
-        margin-bottom: 8%;
-        padding-bottom: 0;
-        padding-top: 25px;
+        margin-bottom: 6%;
+        padding: 2% 8% 0;
     }
-    #outer-robot {
-        padding-top: 100px;
+    #robot-container {
         display: flex;
+        padding-top: 100px;
+        width: var(--size-in-px-2) /* 480px */
+    }
+    #spritesheet {
+        animation: moveSpritesheet1100 5s steps(3) infinite;
+        width: calc(var(--size-in-px-2) * 4); /* 1920px */
+        height: var(--size-in-px-2); /* 480px */
+    }
+}
+@keyframes moveSpritesheet1100 {
+    0% {
+        transform: translate3d(calc(var(--size-in-px-2) * 3 * -1), 0, 0); /* -1728px */
+    }
+    10% {
+        transform: translate3d(0, 0, 0);
     }
 }
 
-@media only screen and (max-width: 1100px) {
-    #outer-robot {
-        padding-top: 170px;
+
+@media only screen and (max-width: 850px) {
+    nav {
+        font-size: .8em;
+        padding: 30px 20px;
+    }
+    #nav-prompt {
+        padding: 3%;
+    }
+    #robot-container {
+        display: flex;
+        padding-top: 100px;
+        width: var(--size-in-px-3) /* 480px */
+    }
+    #spritesheet {
+        animation: moveSpritesheet850 5s steps(3) infinite;
+        width: calc(var(--size-in-px-3) * 4); /* 1920px */
+        height: var(--size-in-px-3); /* 480px */
     }
 }
+@keyframes moveSpritesheet850 {
+    0% {
+        transform: translate3d(calc(var(--size-in-px-3) * 3 * -1), 0, 0); /* -1728px */
+    }
+    10% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
 
 @media only screen and (max-width: 750px) {
     #home {
         display: flex;
         flex-direction: column;
+        align-items: center;
     }
     #nav-container {
         padding-bottom: 70px;
+        margin-right: -20%;
+        width: 70%;
     }
     nav {
         display: flex;
@@ -411,38 +536,19 @@ footer h2 {
         right: 0px;
     }
     #bubble-pointer {
-        position: absolute;
-        width: 150px;
-        height: 150px;
-        background-color: white;
-        border-radius: 100%;
         left: auto;
         right: 30%;
         bottom: -8%;
         z-index: -1;
-    }
-    #bubble-pointer::after {
-        content: "";
-        display: inline-block;
-        width: 150px;
-        height: 150px;
-        background-color: #02EFEE;
-        position: absolute;
-        border-radius: 40%;
-        right: 40%;
-        z-index: -2;
-        bottom: -10px;
     }
 
 
     nav ul {
         padding: 0;
     }
-    #outer-robot {
-        padding-top: 30px;
-        width: 75%;
-    }
-    #robot img {
+    #robot-container {
+        padding-top: 0;
+        margin-top: -50px;
     }
     main {
         margin: 0 5%;
@@ -491,6 +597,8 @@ footer h2 {
     }
     #nav-container {
         padding-bottom: 35px;
+        margin-right: 0;
+        width: 90%;
     }
     #nav-prompt {
         font-size: 13px;
@@ -498,6 +606,11 @@ footer h2 {
     .nav-item a {
         color: brown;
     }
+    #robot-container {
+        padding-top: 0;
+        margin-top: -20px;
+    }
+
     #my-pic {
         width: 60%;
     }
@@ -516,7 +629,7 @@ footer h2 {
         line-height: 1.3;
     }
     nav {
-        padding: 7%;
+        padding: 11% 7%;
     }
     
 
