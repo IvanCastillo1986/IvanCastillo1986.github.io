@@ -28,7 +28,7 @@ const skillsLink = document.getElementById("nav-skills")
 const cyberLink = document.getElementById("nav-cyber")
 
 const navPrompt = document.getElementById("nav-prompt")
-const robot = document.getElementById("robot")
+const robot = document.getElementById("robot-container")
 
 
 
