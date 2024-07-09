@@ -8,7 +8,7 @@
 }
 
 /*
-When changing Mega Man size, it has to be done in a two different places:
+When changing Mega Man size, it has to be done in two different places:
 --size-in-px
 @keyframes moveSpriteSheet
 */
@@ -109,8 +109,8 @@ header h2 {
 
 /* animation: name, duration, timing-function, delay, iteration-count, direction, fill-mode, play-state, timeline */
 #spritesheet {
-    /* background-color: rgba(128, 128, 128, 0.381); */
-    animation: moveSpritesheet 5s steps(3) infinite;
+    background-color: rgba(128, 128, 128, 0.381);
+    animation: moveSpritesheet 4s steps(3) infinite;
     width: calc(var(--size-in-px) * 4);
 }
 
@@ -130,15 +130,14 @@ header h2 {
     }
 }
 
-@keyframes moveSpritesheet1280 {
+@keyframes hitSpritesheet {
     0% {
-        transform: translate3d(calc(var(--size-in-px) * 3 * -1), 0, 0);
-    }
-    10% {
         transform: translate3d(0, 0, 0);
     }
+    100% {
+        transform: translate3d(calc(var(--size-in-px) * 7 * -1), 0, 0);
+    }
 }
-
 
 /**********  END OF MEGA MAN */
 

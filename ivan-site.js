@@ -29,6 +29,7 @@ const cyberLink = document.getElementById("nav-cyber")
 
 const navPrompt = document.getElementById("nav-prompt")
 const robot = document.getElementById("robot-container")
+const spritesheet = document.getElementById("spritesheet")
 
 
 
@@ -247,7 +248,6 @@ robot.addEventListener('click', () => {
     // re-add the class
     body.classList.add('useRobotClick');
 
-    
     // here we add a .negativeSpace property to the classList element, since we can't directly access pseudo-elements
     // we are adding 'negativeSpace' to the bubblePointer's classList (DOMTokenList)
     // we then have the following selector defined in the CSS file to execute animation:
@@ -255,6 +255,12 @@ robot.addEventListener('click', () => {
     bubblePointer.classList.remove('negativeSpace');
     void bubblePointer.offsetWidth;
     bubblePointer.classList.add('negativeSpace');
+
+    // here we add the animation for robot being hit
+    spritesheet.src = 'assets/mega-man/mega-man-hit.png'
+    spritesheet.style.animation = 'hitSpritesheet .5s steps(7) 1 forwards'
+    spritesheet.style.width = 'calc(var(--size-in-px) * 8)'
+
 
     
     numOfHits++;
