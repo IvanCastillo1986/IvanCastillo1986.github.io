@@ -258,10 +258,19 @@ robot.addEventListener('click', () => {
 
     // here we add the animation for robot being hit
     spritesheet.src = 'assets/mega-man/mega-man-hit.png'
-    spritesheet.style.animation = 'hitSpritesheet .5s steps(7) 1 forwards'
+    // spritesheet.style.animation = 'hitAnimation .5s steps(7) 1 forwards'
+    spritesheet.classList.remove('blinking-happy')
+    spritesheet.classList.add('hit')
     spritesheet.style.width = 'calc(var(--size-in-px) * 8)'
 
 
+    // ToDo: add a setTimeout that applies this once the previous hitAnimation has finished running
+    setTimeout(() => {
+        spritesheet.src = 'assets/mega-man/mega-man-blink-frown.png'
+        spritesheet.classList.remove('hit')
+        spritesheet.classList.add('blinking-angry')
+        spritesheet.style.width = 'calc(var(--size-in-px) * 4)'
+    }, 1000)
     
     numOfHits++;
     if (numOfHits === 1) changeBubbleText(firstHit);
