@@ -237,6 +237,45 @@ const fourthHit = ["RAAAHHHRRRRWEHWASDFGVSHKJNBCA!!!"];
 
 const bubblePointer = document.getElementById('bubble-pointer');
 
+// ToDo: reflow the animation element by removing it, then adding it back on
+
+function hitRobotAnimation (currentClass) {
+    // console.log('currentClass:', currentClass)
+    spritesheet.src = 'assets/mega-man/mega-man-hit.png';
+
+    // ToDo
+    // How to get this setTimeout to work?
+    const hitTimeout = setTimeout(() => {
+        spritesheet.src = 'assets/mega-man/mega-man-blink-frown.png';
+        spritesheet.style.width = 'calc(var(--size-in-px) * 4)';
+        spritesheet.classList.remove('hit');
+        spritesheet.classList.add('blinking-angry');
+    }, 900);
+    // const stopTimeout = () => clearTimeout(hitTimeout);
+
+    if (currentClass === 'hit') {
+        console.log(hitTimeout);
+        // stopTimeout()
+        clearTimeout(hitTimeout)
+    } 
+    
+    if (currentClass === 'blinking-happy') {
+        spritesheet.style.width = 'calc(var(--size-in-px) * 8)';
+        spritesheet.classList.remove('blinking-happy');
+        void body.offsetWidth;
+        spritesheet.classList.add('hit');
+    } else if (currentClass === 'hit') {
+        spritesheet.classList.remove('hit');
+        void spritesheet.offsetWidth;
+        spritesheet.classList.add('hit');
+    } else {
+        spritesheet.style.width = 'calc(var(--size-in-px) * 8)';
+        spritesheet.classList.remove('blinking-angry');
+        spritesheet.classList.add('hit');
+    }
+}
+
+
 robot.addEventListener('click', () => {
     // CSS animation class .useRobotClick changes the style of selected body element
     // we need to trigger a reflow so that it happens on each click
@@ -256,21 +295,18 @@ robot.addEventListener('click', () => {
     void bubblePointer.offsetWidth;
     bubblePointer.classList.add('negativeSpace');
 
-    // here we add the animation for robot being hit
-    spritesheet.src = 'assets/mega-man/mega-man-hit.png'
-    // spritesheet.style.animation = 'hitAnimation .5s steps(7) 1 forwards'
-    spritesheet.classList.remove('blinking-happy')
-    spritesheet.classList.add('hit')
-    spritesheet.style.width = 'calc(var(--size-in-px) * 8)'
 
+    // const spritesheetClass = spritesheet.classList.contains('blinking-happy') ? 'blinking-happy' : spritesheetClass.classList.contains('blinking-angry') ? 'blinking-angry' : 'hit'
+    function getSpritesheetClass() {
+        if (spritesheet.classList.contains('blinking-happy')) return 'blinking-happy'
+        else if (spritesheet.classList.contains('hit')) return 'hit'
+        else if (spritesheet.classList.contains('blinking-angry')) return 'blinking-angry'
+    }
 
-    // ToDo: add a setTimeout that applies this once the previous hitAnimation has finished running
-    setTimeout(() => {
-        spritesheet.src = 'assets/mega-man/mega-man-blink-frown.png'
-        spritesheet.classList.remove('hit')
-        spritesheet.classList.add('blinking-angry')
-        spritesheet.style.width = 'calc(var(--size-in-px) * 4)'
-    }, 1000)
+    // console.log(getSpritesheetClass())
+
+    hitRobotAnimation(getSpritesheetClass())
+
     
     numOfHits++;
     if (numOfHits === 1) changeBubbleText(firstHit);
