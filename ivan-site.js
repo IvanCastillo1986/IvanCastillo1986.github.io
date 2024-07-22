@@ -240,37 +240,25 @@ const bubblePointer = document.getElementById('bubble-pointer');
 // ToDo: reflow the animation element by removing it, then adding it back on
 
 function hitRobotAnimation (currentClass) {
-    // console.log('currentClass:', currentClass)
     spritesheet.src = 'assets/mega-man/mega-man-hit.png';
 
-    // ToDo
-    // How to get this setTimeout to work?
     const hitTimeout = setTimeout(() => {
         spritesheet.src = 'assets/mega-man/mega-man-blink-frown.png';
-        spritesheet.style.width = 'calc(var(--size-in-px) * 4)';
         spritesheet.classList.remove('hit');
-        spritesheet.classList.add('blinking-angry');
+        spritesheet.classList.add('blinking');
     }, 900);
-    // const stopTimeout = () => clearTimeout(hitTimeout);
 
     if (currentClass === 'hit') {
-        console.log(hitTimeout);
-        // stopTimeout()
         clearTimeout(hitTimeout)
     } 
     
-    if (currentClass === 'blinking-happy') {
-        spritesheet.style.width = 'calc(var(--size-in-px) * 8)';
-        spritesheet.classList.remove('blinking-happy');
+    if (currentClass === 'blinking') {
+        spritesheet.classList.remove('blinking');
         void body.offsetWidth;
         spritesheet.classList.add('hit');
-    } else if (currentClass === 'hit') {
+    } else {  // if clicked during .hit animation, restart .hit
         spritesheet.classList.remove('hit');
         void spritesheet.offsetWidth;
-        spritesheet.classList.add('hit');
-    } else {
-        spritesheet.style.width = 'calc(var(--size-in-px) * 8)';
-        spritesheet.classList.remove('blinking-angry');
         spritesheet.classList.add('hit');
     }
 }
@@ -295,15 +283,11 @@ robot.addEventListener('click', () => {
     void bubblePointer.offsetWidth;
     bubblePointer.classList.add('negativeSpace');
 
-
-    // const spritesheetClass = spritesheet.classList.contains('blinking-happy') ? 'blinking-happy' : spritesheetClass.classList.contains('blinking-angry') ? 'blinking-angry' : 'hit'
+    // get current animation class, to pass into hitRobotAnimation()
     function getSpritesheetClass() {
-        if (spritesheet.classList.contains('blinking-happy')) return 'blinking-happy'
-        else if (spritesheet.classList.contains('hit')) return 'hit'
-        else if (spritesheet.classList.contains('blinking-angry')) return 'blinking-angry'
+        if (spritesheet.classList.contains('blinking')) return 'blinking'
+        else return 'hit'
     }
-
-    // console.log(getSpritesheetClass())
 
     hitRobotAnimation(getSpritesheetClass())
 
