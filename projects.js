@@ -25,6 +25,14 @@ export const projectsArray = [
         imgAlt: "A screenshot of Retro Zone Logs web app"
     },
     {
+        githubUrl: "https://github.com/IvanCastillo1986/ToDo-frontend",
+        appTitle: "Todo Voodoo",
+        appDescription: "Task management application",
+        appUrl: "https://todo-app-tkh.netlify.app/",
+        imgSrc: "images/todo-app-screenshot.png",
+        imgAlt: "A screenshot of Todo application"
+    },
+    {
         unfinished: true,
         githubUrl: "https://github.com/IvanCastillo1986/art-gallery",
         appTitle: "Code Canvas Corner",
@@ -34,7 +42,6 @@ export const projectsArray = [
         imgAlt: "A screenshot of Code Canvas Corner web app"
     },
     {
-        unfinished: true,
         githubUrl: "https://github.com/IvanCastillo1986/weather_channel_tribute",
         appTitle: "The Weather Channel",
         appDescription: "Aesthetics from 90s 'The Weather Channel'",
