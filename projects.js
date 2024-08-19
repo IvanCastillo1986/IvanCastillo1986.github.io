@@ -50,6 +50,39 @@ export const projectsArray = [
         imgAlt: "A screenshot of The Weather Channel"
     },
     {
+        githubUrl: "https://github.com/IvanCastillo1986/meeting-booking-app-frontend",
+        appTitle: "Meetings Booker",
+        appDescription: "Book rooms for meetings or conferences",
+        appUrl: "https://meeting-booking-app.netlify.app/",
+        imgSrc: "images/meetings-booker-screenshot.png",
+        imgAlt: "A screenshot of Meetings Booker app"
+    },
+    {
+        unfinished: true,
+        githubUrl: "https://github.com/IvanCastillo1986/fictional-engine",
+        appTitle: "They Live Budgeting App",
+        appDescription: "Application to record transactions",
+        appUrl: "https://they-live-app.netlify.app/",
+        imgSrc: "images/they-live-budgeting-screenshot.png",
+        imgAlt: "A screenshot of Budgeting app"
+    },
+    {
+        githubUrl: "https://github.com/IvanCastillo1986/FSW-React-YouTube",
+        appTitle: "YouTube It",
+        appDescription: "My own clone of YouTube",
+        appUrl: "https://ivan-esay-youtube.netlify.app/",
+        imgSrc: "images/youtube-clone-screenshot.png",
+        imgAlt: "A screenshot of YouTube clone"
+    },
+    {
+        githubUrl: "https://github.com/IvanCastillo1986/calculator-project",
+        appTitle: "Outrun Calculator",
+        appDescription: "Calculator web app",
+        appUrl: "https://outrun-calculator.netlify.app/",
+        imgSrc: "images/outrun-calculator-screenshot.png",
+        imgAlt: "A screenshot of Outrun Calculator"
+    },
+    {
         githubUrl: "https://github.com/IvanCastillo1986/FSW-Text-Based-Adventure",
         appTitle: "Lovesick",
         appDescription: "Choose Your Own Adventure CLI Game",
