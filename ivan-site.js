@@ -135,14 +135,22 @@ const renderCyberDocument = (doc) => {
 }
 
 const cyberDocsSection = document.getElementById('cyber-documentations')
+const cyberDocsContainer = document.createElement('div')
+cyberDocsContainer.className = 'cyber-docs-container'
 for (const cyberDoc of cyberDocsArray) {
-    cyberDocsSection.appendChild(renderCyberDocument(cyberDoc))
+    // cyberDocsSection.appendChild(renderCyberDocument(cyberDoc))
+    cyberDocsContainer.appendChild(renderCyberDocument(cyberDoc))
 }
+cyberDocsSection.appendChild(cyberDocsContainer)
 
 const cyberPapersSection = document.getElementById('cyber-papers')
+const cyberPapersContainer = document.createElement('div')
+cyberPapersContainer.className = 'cyber-papers-container'
 for (const cyberPaper of cyberPapersArray) {
-    cyberPapersSection.appendChild(renderCyberDocument(cyberPaper))
+    // cyberPapersSection.appendChild(renderCyberDocument(cyberPaper))
+    cyberPapersContainer.appendChild(renderCyberDocument(cyberPaper))
 }
+cyberPapersSection.appendChild(cyberPapersContainer)
 
 
 

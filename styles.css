@@ -369,6 +369,16 @@ main h4 {
 #cyber-documentations h4 {
     margin-bottom: 50px;
 }
+.cyber-docs-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.cyber-papers-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
 .cyber-doc {
     display: flex;
     flex-direction: column;
@@ -378,11 +388,15 @@ main h4 {
     color: brown;
 }
 .cyber-doc .description {
-    
 }
 .cyber-doc .doc-img-anchor {
 
 }
+
+
+
+
+
 
 
 /**********  END OF MAIN */
@@ -608,6 +622,17 @@ footer h2 {
 
     #my-pic {
         width: 60%;
+    }
+
+    .cyber-docs-container {
+        display: block;
+    }
+    .cyber-papers-container {
+        display: block;
+    }
+    .cyber-doc {
+        width: 100%;
+        margin: auto;
     }
 }
 @media only screen and (max-width: 400px) {
