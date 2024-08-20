@@ -1,5 +1,5 @@
 import { projectsArray } from "./projects.js"
-import { cyberDocsArray } from "./cyber-projects.js"
+import { cyberDocsArray, cyberPapersArray } from "./cyber-projects.js"
 
 /*
 renderWebProject()  :  takes project objects from projects.js and converts them to entry in Projects page
@@ -137,6 +137,11 @@ const renderCyberDocument = (doc) => {
 const cyberDocsSection = document.getElementById('cyber-documentations')
 for (const cyberDoc of cyberDocsArray) {
     cyberDocsSection.appendChild(renderCyberDocument(cyberDoc))
+}
+
+const cyberPapersSection = document.getElementById('cyber-papers')
+for (const cyberPaper of cyberPapersArray) {
+    cyberPapersSection.appendChild(renderCyberDocument(cyberPaper))
 }
 
 
