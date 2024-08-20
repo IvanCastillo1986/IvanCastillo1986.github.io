@@ -83,7 +83,7 @@ function addWorkInProgressIcon(appAnchor) {
     
     const workInProgressIcon = document.createElement('img');
     workInProgressIcon.className = 'work-in-progress-icon';
-    workInProgressIcon.src = 'images/work-in-progress.png';
+    workInProgressIcon.src = 'images/assets/icon/work-in-progress.png';
     workInProgressIcon.alt = 'A work in progress sign';
     
     appAnchor.appendChild(workInProgressIcon);
@@ -240,10 +240,10 @@ const bubblePointer = document.getElementById('bubble-pointer');
 // ToDo: reflow the animation element by removing it, then adding it back on
 
 function hitRobotAnimation (currentClass) {
-    spritesheet.src = 'assets/mega-man/mega-man-hit.png';
+    spritesheet.src = 'images/assets/mega-man/mega-man-hit.png';
 
     const hitTimeout = setTimeout(() => {
-        spritesheet.src = 'assets/mega-man/mega-man-blink-frown.png';
+        spritesheet.src = 'images/assets/mega-man/mega-man-blink-frown.png';
         spritesheet.classList.remove('hit');
         spritesheet.classList.add('blinking');
     }, 900);

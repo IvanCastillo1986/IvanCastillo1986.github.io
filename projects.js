@@ -4,7 +4,7 @@ export const projectsArray = [
         appTitle: "Pokemon Web Game App",
         appDescription: "Web App and browser game dedicated to pokemon fans",
         appUrl: "https://pokemon-card-website.netlify.app/",
-        imgSrc: "images/pokemon-web-game-app.png",
+        imgSrc: "images/web_dev/my-pokemon-app.png",
         imgAlt: "A screenshot of my Pokemon web app"
     },
     {
@@ -13,7 +13,7 @@ export const projectsArray = [
         appTitle: "Code Clear",
         appDescription: "Code quality analyzer",
         appUrl: "https://code-clear.netlify.app/",
-        imgSrc: "images/Code-Clear-screenshot.png",
+        imgSrc: "images/web_dev/Code-Clear-screenshot.png",
         imgAlt: "A screenshot of Code Clear web app"
     },
     {
@@ -21,7 +21,7 @@ export const projectsArray = [
         appTitle: "Retro Zone Logs",
         appDescription: "Retro Video Game collector logs",
         appUrl: "https://retro-game-log.netlify.app/",
-        imgSrc: "images/retro-zone-logs.png",
+        imgSrc: "images/web_dev/retro-zone-logs.png",
         imgAlt: "A screenshot of Retro Zone Logs web app"
     },
     {
@@ -29,7 +29,7 @@ export const projectsArray = [
         appTitle: "Todo Voodoo",
         appDescription: "Task management application",
         appUrl: "https://todo-app-tkh.netlify.app/",
-        imgSrc: "images/todo-app-screenshot.png",
+        imgSrc: "images/web_dev/todo-app-screenshot.png",
         imgAlt: "A screenshot of Todo application"
     },
     {
@@ -38,7 +38,7 @@ export const projectsArray = [
         appTitle: "Code Canvas Corner",
         appDescription: "Art Gallery for coded art",
         appUrl: "https://code-canvas.netlify.app/",
-        imgSrc: "images/code-canvas-corner.png",
+        imgSrc: "images/web_dev/code-canvas-corner.png",
         imgAlt: "A screenshot of Code Canvas Corner web app"
     },
     {
@@ -46,7 +46,7 @@ export const projectsArray = [
         appTitle: "The Weather Channel",
         appDescription: "Aesthetics from 90s 'The Weather Channel'",
         appUrl: "https://the-90s-weather-channel.netlify.app/",
-        imgSrc: "images/90s-weather-channel.png",
+        imgSrc: "images/web_dev/90s-weather-channel.png",
         imgAlt: "A screenshot of The Weather Channel"
     },
     {
@@ -54,7 +54,7 @@ export const projectsArray = [
         appTitle: "Meetings Booker",
         appDescription: "Book rooms for meetings or conferences",
         appUrl: "https://meeting-booking-app.netlify.app/",
-        imgSrc: "images/meetings-booker-screenshot.png",
+        imgSrc: "images/web_dev/meetings-booker-screenshot.png",
         imgAlt: "A screenshot of Meetings Booker app"
     },
     {
@@ -63,7 +63,7 @@ export const projectsArray = [
         appTitle: "They Live Budgeting App",
         appDescription: "Application to record transactions",
         appUrl: "https://they-live-app.netlify.app/",
-        imgSrc: "images/they-live-budgeting-screenshot.png",
+        imgSrc: "images/web_dev/they-live-budgeting-screenshot.png",
         imgAlt: "A screenshot of Budgeting app"
     },
     {
@@ -71,7 +71,7 @@ export const projectsArray = [
         appTitle: "YouTube It",
         appDescription: "My own clone of YouTube",
         appUrl: "https://ivan-esay-youtube.netlify.app/",
-        imgSrc: "images/youtube-clone-screenshot.png",
+        imgSrc: "images/web_dev/youtube-clone-screenshot.png",
         imgAlt: "A screenshot of YouTube clone"
     },
     {
@@ -79,7 +79,7 @@ export const projectsArray = [
         appTitle: "Outrun Calculator",
         appDescription: "Calculator web app",
         appUrl: "https://outrun-calculator.netlify.app/",
-        imgSrc: "images/outrun-calculator-screenshot.png",
+        imgSrc: "images/web_dev/outrun-calculator-screenshot.png",
         imgAlt: "A screenshot of Outrun Calculator"
     },
     {
@@ -87,7 +87,7 @@ export const projectsArray = [
         appTitle: "Lovesick",
         appDescription: "Choose Your Own Adventure CLI Game",
         appUrl: "https://github.com/IvanCastillo1986/FSW-Text-Based-Adventure",
-        imgSrc: "images/lovesick-crop.png",
+        imgSrc: "images/web_dev/lovesick-crop.png",
         imgAlt: "A screenshot of my Choose Your Own Adventure Project - Lovesick"
     },
     {
@@ -95,7 +95,7 @@ export const projectsArray = [
         appTitle: "Snowman",
         appDescription: "Letter-guessing Game",
         appUrl: "https://github.com/IvanCastillo1986/FSW-CLI-Snowman",
-        imgSrc: "images/snowman-crop.png",
+        imgSrc: "images/web_dev/snowman-crop.png",
         imgAlt: "A screenshot of my Snowman word-guessing game"
     },
     {
@@ -103,7 +103,7 @@ export const projectsArray = [
         appTitle: "Total 180 Training",
         appDescription: "My Wordpress Business Website",
         appUrl: "http://www.total180training.com/",
-        imgSrc: "images/my-website.png",
+        imgSrc: "images/web_dev/my-website.png",
         imgAlt: "A screenshot of total180training.com"
     },
 ];
@@ -121,7 +121,7 @@ export const projectsArray = [
 //         </a>
 //         <p class="description">Web App and browser game dedicated to pokemon fans</p>
 //         <a href="https://pokemon-card-website.netlify.app/">
-//             <img src="images/pokemon-web-game-app.png" alt="A screenshot of my Pokemon web app" />
+//             <img src="images/web_dev/pokemon-web-game-app.png" alt="A screenshot of my Pokemon web app" />
 //         </a>
 //     </div>
 
@@ -131,7 +131,7 @@ export const projectsArray = [
 //         </a>
 //         <p class="description">Retro Video Game collector logs</p>
 //         <a href="https://retro-game-log.netlify.app/">
-//             <img src="images/retro-zone-logs.png" alt="A screenshot of Retro Zone Logs web app" />
+//             <img src="images/web_dev/retro-zone-logs.png" alt="A screenshot of Retro Zone Logs web app" />
 //         </a>
 //     </div>
     
@@ -142,8 +142,8 @@ export const projectsArray = [
 //         <p class="description">Art Gallery for coded art</p>
 //         <div class="project-img-container">
 //             <a href="https://code-canvas.netlify.app/">
-//                 <img src="images/code-canvas-corner.png" alt="A screenshot of Code Canvas Corner web app" />
-//                 <img class="work-in-progress-icon" src="images/work-in-progress.png" alt="A work in progress sign" />
+//                 <img src="images/web_dev/code-canvas-corner.png" alt="A screenshot of Code Canvas Corner web app" />
+//                 <img class="work-in-progress-icon" src="images/web_dev/assets/icon/work-in-progress.png" alt="A work in progress sign" />
 //             </a>
 //         </div>
 
@@ -156,8 +156,8 @@ export const projectsArray = [
 //         <p class="description">App clone of 90s 'The Weather Channel'</p>
 //         <div class="project-img-container">
 //             <a href="https://the-90s-weather-channel.netlify.app/">
-//                 <img src="images/90s-weather-channel.png" alt="A screenshot of The Weather Channel" />
-//                 <img class="work-in-progress-icon" src="images/work-in-progress.png" alt="A work in progress sign" />
+//                 <img src="images/web_dev/90s-weather-channel.png" alt="A screenshot of The Weather Channel" />
+//                 <img class="work-in-progress-icon" src="images/web_dev/assets/icon/work-in-progress.png" alt="A work in progress sign" />
 //             </a>
 //         </div>
 
@@ -167,7 +167,7 @@ export const projectsArray = [
 //         <p class="title">Lovesick</p>
 //         <p class="description">Choose Your Own Adventure CLI Game</p>
 //         <a href="https://github.com/IvanCastillo1986/FSW-Text-Based-Adventure" target='_blank'>
-//             <img src="images/lovesick-crop.png" alt="A screenshot of my Choose Your Own Adventure Project - Lovesick" />
+//             <img src="images/web_dev/lovesick-crop.png" alt="A screenshot of my Choose Your Own Adventure Project - Lovesick" />
 //         </a>
 //     </div>
     
@@ -175,7 +175,7 @@ export const projectsArray = [
 //         <p class="title">Snowman</p>
 //         <p class="description">Letter-guessing Game</p>
 //         <a href="https://github.com/IvanCastillo1986/FSW-CLI-Snowman" target='_blank'>
-//             <img src="images/snowman-crop.png" alt="A screenshot of my Snowman word-guessing game" />
+//             <img src="images/web_dev/snowman-crop.png" alt="A screenshot of my Snowman word-guessing game" />
 //         </a>
 //     </div>
 
@@ -183,7 +183,7 @@ export const projectsArray = [
 //         <p class="title">Total 180 Training</p>
 //         <p class="description">My Wordpress Business Website</p>
 //         <a href="http://www.total180training.com/" target='_blank'>
-//             <img src="images/my-website.png" alt="A screenshot of total180training.com" />
+//             <img src="images/web_dev/my-website.png" alt="A screenshot of total180training.com" />
 //         </a>
 //     </div> -->
 

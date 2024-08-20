@@ -4,7 +4,7 @@ export const cyberDocsArray = [
         docTitle: "Docker Documentation",
         docDescription: "Personal documentation for installation and usage of Docker for Apple",
         docUrl: "https://docs.google.com/document/d/1h8o_yFvUY2yafnxvcXovLyspwZq1bRxdPVO3CHzdixk",
-        imgSrc: "images/docker-doc.png",
+        imgSrc: "images/cyber/docker-doc.png",
         imgAlt: "A screenshot of my Docker technical documentation"
     }
 ]
