@@ -313,40 +313,16 @@ robot.addEventListener('click', () => {
 });
 
 
-
-
-
-
-
-
-
-
-// ------------------------------------------------------------------------------------------
-
-// removed after replacing with navigateToPage()
-
-// aboutMeLink.addEventListener("click", () => {
-//     hideAllSections();
-//     aboutMeSection.style.display = "block";
-//     changeBubbleText(['We have arrived homonid', 'Enjoy your stay. Scroll down']);
-//     console.log(aboutMeLink)
-//     console.log(aboutMeSection)
-// });
-
-// projectsLink.addEventListener("click", () => {
-//     hideAllSections();
-//     projectsSection.style.display = "block";
-//     changeBubbleText(['We have arrived homonid', 'Enjoy your stay. Scroll down']);
-// });
-
-// skillsLink.addEventListener("click", () => {
-//     hideAllSections();
-//     skillsSection.style.display = "block";
-//     changeBubbleText(['We have arrived homonid', 'Enjoy your stay. Scroll down']);
-// });
-
-// cyberLink.addEventListener("click", () => {
-//     hideAllSections();
-//     cyberSection.style.display = "block";
-//     changeBubbleText(['We have arrived homonid', 'Enjoy your stay. Scroll down']);
-// });
+const paragraphs = document.querySelectorAll('.dialogue')
+function typeText(pIdx) {
+    
+    const displayDialogue = setInterval(() => {
+        if (pIdx < paragraphs.length) {
+            paragraphs[pIdx].classList.add('typed')
+            pIdx++
+        } else {
+            clearInterval(displayDialogue)
+        }
+    }, 1500)
+}
+typeText(0)

@@ -176,13 +176,35 @@ nav {
     padding: 5% 6% 3%;
 }
 
+/* 
+    each .dialogue will start with no visibility
+    when the .typed class is applied, it receives visibility
+    the .typed class will also apply the animation
+*/
 #nav-prompt {
+    display: inline-block;
     font-size: 1em;
     text-align: center;
     line-height: 1.8em;
     padding-bottom: 30px;
     text-transform: uppercase;
 }
+.dialogue {
+    visibility: hidden;
+}
+.typed {
+    visibility: visible;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    animation: typing 1.5s steps(30, end) forwards;
+}
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+
 #line1 {
     padding: 0 10px;
 }
@@ -676,3 +698,5 @@ footer h2 {
     50% {background-color: #0001cb;}
     100% {background-color: #02EFEE;}
 }
+
+
